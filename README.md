@@ -1,5 +1,6 @@
-# UML-OOAD
-## Übungszettel UML / Objektorientierte Analyse und Design
+# UML-OOAD / Objektorientierte Analyse und Design / Übungszettel UML
+
+# Objektorientierte Analyse 
 
 Objektorientierte Analyse und Design (OOAD) sind objektorientierte Varianten der zwei allgemeinen Tätigkeiten Anforderungsanalyse (objektorientierte Analyse) und Systementwurf (Obejktorientiertes Design) im Entwicklungsprozess eines Softwaresystems.
 
@@ -70,3 +71,113 @@ Die Dynamische Modellierung ist ein wichtiger Teil der Objektorientierten Analys
 - Kollaborationsdiagramme: Ein Kollaborationsdiagramm zeigt die Interaktionen zwischen Objekten, die zusammenarbeiten, um eine bestimmte Funktion auszuführen. Es beschreibt die Nachrichten, die zwischen den Objekten ausgetauscht werden, um Informationen zu teilen und Funktionen auszuführen. Kollaborationsdiagramme sind nützlich, um die Interaktionen zwischen Objekten zu verstehen und zu modellieren.
 
 Durch die Dynamische Modellierung können die dynamischen Abläufe und Prozesse im System klar und präzise modelliert werden, um ein besseres Verständnis des Systems zu erreichen und eine Grundlage für die Implementierung zu schaffen.
+
+
+# Anforderungsanalyse mit Anwendungsfällen
+Arbeite dich in die Grundprinzipien der Anforderungsanalyse mit USE-Cases (Diagramm + textuelle Beschreibung + Mockup) ein.
+
+
+## Grundlagen
+
+
+## Vorgehensweisen
+
+
+### Wasserfallmodell
+![Wasserfallmodell](images/wasserfallmodell.png)
+
+
+### V-Modell
+![V-Modell](images/v-modell.jpg)
+
+
+### Prototyp-Modell
+![Prototyp-Modell](images/prototyp-modell.jpg)
+
+## Werkzeuge
+
+## Dokumentation
+Dokumentiere die wesentlichen Aspekte sowie deine persönlichen Lernergebnisse.
+
+
+
+# Anforderungsanalyse mit User Stories und Epics
+Arbeite dich in die Grundprinzipien der Anforderungsanalyse mit User-Stories und Epics ein.
+
+## Grundlagen
+
+## Vorgehensweisen
+
+## Werkzeuge
+
+## Dokumentation
+Dokumentiere die wesentlichen Aspekte sowie deine persönlichen Lernergebnisse.
+
+
+# Wichtige UML-Diagrammarten
+
+## Klassendiagramm
+
+### Einsatzzweck
+
+### Wesentliche Notationsformen
+
+### Exemplarische Anwendung Beispiel
+
+
+
+## Sequenzdiagramm
+
+### Einsatzzweck
+
+### Wesentliche Notationsformen
+
+### Exemplarische Anwendung Beispiel
+
+
+
+## Zustandsdiagramm
+
+### Einsatzzweck
+
+### Wesentliche Notationsformen
+
+### Exemplarische Anwendung Beispiel
+
+
+
+# Textuelles Diagramm Design-Tool
+
+## PlantUML
+
+## Mermaid
+
+
+
+# USE-CASE-DIAGRAMM 1
+Interpretieren Sie schriftlich das folgende Use-Case-Diagramm:
+
+
+# USE-CASE-DIAGRAMM 2
+Interpretieren Sie schriftlich das folgende Use-Case-Diagramm:
+
+
+# USE-CASE-DIAGRAMM 3
+Entwerfen Sie ein Anwendungsfalldiagramm zu der folgenden Beschreibung:
+Es soll ein Anwendungssystem zur Unterstützung der Geschäftsprozesse in einem Krankenhaus
+entwickelt werden. Das System soll folgende Aufgaben erledigen:
+- Herr Müller und Herr Maier seien in der Verwaltung angestellt.
+- Herr Müller soll Mitarbeiter einstellen und entlassen können. Sowohl Herr Müller als auch Herr Maier
+kann Patienten aufnehmen und entlassen.
+- Sowohl bei der Einstellung von Mitarbeitern, als auch bei der Aufnahme von Patienten müssen Name
+und Adresse erfasst werden. Um redundante Anwendungsfall-Beschreibungen zu verhindern wird
+diese Tätigkeit in einen gesonderten Anwendungsfall ausgelagert.
+- Falls der einzustellende Mitarbeiter bzw. der aufzunehmende Patient seinen Wohnsitz am Ort des
+Krankenhauses hat, wird geprüft, ob die angegebene Adresse am Wohnort existiert. Lagern Sie auch
+diesen Anwendungsfall aus.
+
+# USE-CASE-DETAILBESCHREIBUNGEN
+Definieren Sie die Use-Case-Details (level, complexity, status, pre-conditions, post-conditions and assumptions,
+event flow etc.) für einige Use-Cases der vorhergehenden Use-Case-Übungen. Verwenden Sie dazu eine der
+bereitgestellten Schablonen bzw. ein entsprechendes Software-Tool.
+Schablone A
