@@ -51,11 +51,11 @@ Die strukturelle Modellierung ist ein wichtiger Teil der Objektorientierten Anal
 
 - Beziehungen: Beziehungen beschreiben, wie Objekte und Klassen im System miteinander verbunden sind. Es gibt verschiedene Arten von Beziehungen, wie beispielsweise die Assoziation, die Vererbung und die Aggregation.
 
-- Assoziation: Eine Assoziation beschreibt eine Beziehung zwischen zwei Klassen, die angibt, dass Objekte der einen Klasse Objekte der anderen Klasse kennen oder darauf zugreifen können.
+    - Assoziation: Eine Assoziation beschreibt eine Beziehung zwischen zwei Klassen, die angibt, dass Objekte der einen Klasse Objekte der anderen Klasse kennen oder darauf zugreifen können.
 
-- Vererbung: Vererbung beschreibt eine Beziehung zwischen Klassen, bei der eine Klasse (die Subklasse) die Eigenschaften und Verhaltensweisen einer anderen Klasse (der Superklasse) erbt. Dies ermöglicht es, Klassen hierarchisch zu organisieren und gemeinsame Eigenschaften und Verhaltensweisen zu definieren.
+    - Vererbung: Vererbung beschreibt eine Beziehung zwischen Klassen, bei der eine Klasse (die Subklasse) die Eigenschaften und Verhaltensweisen einer anderen Klasse (der Superklasse) erbt. Dies ermöglicht es, Klassen hierarchisch zu organisieren und gemeinsame Eigenschaften und Verhaltensweisen zu definieren.
 
-- Aggregation: Aggregation beschreibt eine Beziehung zwischen Klassen, bei der eine Klasse (der Aggregator) eine oder mehrere Instanzen einer anderen Klasse (der Aggregatklasse) besitzt. Aggregation ermöglicht es, komplexe Systeme durch die Kombination von kleineren Teilen zu modellieren.
+    - Aggregation: Aggregation beschreibt eine Beziehung zwischen Klassen, bei der eine Klasse (der Aggregator) eine oder mehrere Instanzen einer anderen Klasse (der Aggregatklasse) besitzt. Aggregation ermöglicht es, komplexe Systeme durch die Kombination von kleineren Teilen zu modellieren.
 
 Durch die strukturelle Modellierung können die statischen Aspekte des Systems klar und präzise modelliert werden, um ein besseres Verständnis des Systems zu erreichen und eine Grundlage für die Implementierung zu schaffen.
 
@@ -72,7 +72,8 @@ Die Dynamische Modellierung ist ein wichtiger Teil der Objektorientierten Analys
 
 Durch die Dynamische Modellierung können die dynamischen Abläufe und Prozesse im System klar und präzise modelliert werden, um ein besseres Verständnis des Systems zu erreichen und eine Grundlage für die Implementierung zu schaffen.
 
-
+# 
+# 
 # Anforderungsanalyse mit Anwendungsfällen
 Arbeite dich in die Grundprinzipien der Anforderungsanalyse mit USE-Cases (Diagramm + textuelle Beschreibung + Mockup) ein.
 
@@ -89,24 +90,23 @@ Ein Anwendungsfall ist ein Szenario, das eine bestimmte Funktionalität des Syst
 
 - Anwendungsfallspezifikation:
 Die Anwendungsfallspezifikation ist die detaillierte Beschreibung eines Anwendungsfalls. Sie enthält typischerweise Informationen wie:
--   Name des Anwendungsfalls
--   Beschreibung oder Ziel des Anwendungsfalls
--   Akteure, die am Anwendungsfall beteiligt sind
--   Vorbedingungen (Bedingungen, die vor der Ausführung des Anwendungsfalls erfüllt sein müssen)
--   Nachbedingungen (Zustand des Systems nach der Ausführung des Anwendungsfalls)
--   Normaler Ablauf (Schritte, die im normalen Verlauf der Interaktion stattfinden)
--   Alternative Abläufe (alternative Schritte oder Verzweigungen, die auftreten können)
--   Ausnahmen oder Fehlerbedingungen (Szenarien, in denen der Anwendungsfall fehlschlägt oder abgebrochen wird)
+    - Name des Anwendungsfalls
+    - Beschreibung oder Ziel des Anwendungsfalls
+    - Akteure, die am Anwendungsfall beteiligt sind
+    - Vorbedingungen (Bedingungen, die vor der Ausführung des Anwendungsfalls erfüllt sein müssen)
+    - Nachbedingungen (Zustand des Systems nach der Ausführung des Anwendungsfalls)
+    - Normaler Ablauf (Schritte, die im normalen Verlauf der Interaktion stattfinden)
+    - Alternative Abläufe (alternative Schritte oder Verzweigungen, die auftreten können)
+    - Ausnahmen oder Fehlerbedingungen (Szenarien, in denen der Anwendungsfall fehlschlägt oder abgebrochen wird)
 
 - Anwendungsfalldiagramme:
 Anwendungsfalldiagramme sind visuelle Darstellungen von Anwendungsfällen und ihren Beziehungen zu Akteuren. Sie sind Teil der Unified Modeling Language (UML) und helfen dabei, die Anforderungen und Interaktionen eines Systems auf einen Blick zu erfassen.
 
 - Schritte zur Erstellung von Anwendungsfällen:
--   Identifizierung der Akteure: Identifizieren Sie die verschiedenen - -   Rollen, die mit dem System interagieren.
--   Identifizierung der Anwendungsfälle: Ermitteln Sie die verschiedenen Szenarien, in denen Akteure mit dem System interagieren, um ihre Ziele zu erreichen.
--   Erstellung von Anwendungsfallspezifikationen: Beschreiben Sie die Anwendungsfälle detailliert, einschließlich der Vorbedingungen, Nachbedingungen, normalen Abläufe, alternativen Abläufe und Fehlerbedingungen.
--   Erstellung von Anwendungsfalldiagrammen: Visualisieren Sie die Beziehungen zwischen Akteuren und Anwendungsfällen in einem Diagramm.
-Die Anforderungsanalyse mit Anwendungsfällen ermöglicht es Ihnen, ein klares Verständnis der funktionalen
+    - Identifizierung der Akteure: Identifizieren Sie die verschiedenen - -   Rollen, die mit dem System interagieren.
+    - Identifizierung der Anwendungsfälle: Ermitteln Sie die verschiedenen Szenarien, in denen Akteure mit dem System interagieren, um ihre Ziele zu erreichen.
+    - Erstellung von Anwendungsfallspezifikationen: Beschreiben Sie die Anwendungsfälle detailliert, einschließlich der Vorbedingungen, Nachbedingungen, normalen Abläufe, alternativen Abläufe und Fehlerbedingungen.
+    - Erstellung von Anwendungsfalldiagrammen: Visualisieren Sie die Beziehungen zwischen Akteuren und Anwendungsfällen in einem Diagramm.
 
 
 ## Vorgehensweisen
@@ -138,6 +138,7 @@ Verwenden Sie geeignete Werkzeuge und Prozesse, um die Anwendungsfälle und ihre
 
 
 ### Generelle Vorgehensmodelle
+
 ### Wasserfallmodell
 ![Wasserfallmodell](images/wasserfallmodell.png)
 
@@ -198,14 +199,14 @@ Bei der Anforderungsanalyse mit Anwendungsfällen ist es wichtig, die Anwendungs
 
 - Anwendungsfallspezifikation erstellen:
 Für jeden identifizierten Anwendungsfall sollte eine Anwendungsfallspezifikation erstellt werden.
--   Name des Anwendungsfalls
--   Kurze Beschreibung oder Ziel des Anwendungsfalls
--   Beteiligte Akteure (Benutzer, Systeme oder Organisationen, die mit dem System interagieren)
--   Vorbedingungen (Bedingungen, die vor der Ausführung des Anwendungsfalls erfüllt sein müssen)
--   Nachbedingungen (Zustand des Systems nach der Ausführung des Anwendungsfalls)
--   Normaler Ablauf (Schritte, die im normalen Verlauf der Interaktion stattfinden)
--   Alternative Abläufe (alternative Schritte oder Verzweigungen, die auftreten können)
--   Ausnahmen oder Fehlerbedingungen (Szenarien, in denen der Anwendungsfall fehlschlägt oder abgebrochen wird)
+    - Name des Anwendungsfalls
+    - Kurze Beschreibung oder Ziel des Anwendungsfalls
+    - Beteiligte Akteure (Benutzer, Systeme oder Organisationen, die mit dem System interagieren)
+    - Vorbedingungen (Bedingungen, die vor der Ausführung des Anwendungsfalls erfüllt sein müssen)
+    - Nachbedingungen (Zustand des Systems nach der Ausführung des Anwendungsfalls)
+    - Normaler Ablauf (Schritte, die im normalen Verlauf der Interaktion stattfinden)
+    - Alternative Abläufe (alternative Schritte oder Verzweigungen, die auftreten können)
+    - Ausnahmen oder Fehlerbedingungen (Szenarien, in denen der Anwendungsfall fehlschlägt oder abgebrochen wird)
 
 - Anwendungsfalldiagramme erstellen:
 Anwendungsfalldiagramme sind visuelle Darstellungen der Anwendungsfälle und ihrer Beziehungen zu den beteiligten Akteuren. Erstellen Sie Anwendungsfalldiagramme, um die Interaktionen und Beziehungen zwischen den Anwendungsfällen und den Akteuren zu verdeutlichen. Verwenden Sie UML-Modellierungswerkzeuge wie Enterprise Architect, Visual Paradigm, Lucidchart oder StarUML, um die Diagramme zu erstellen und zu verwalten.
@@ -219,6 +220,8 @@ Erstellen Sie Prototypen oder Wireframes des Systems, um ein besseres Verständn
 - Überprüfung und Validierung:
 Laden Sie die Stakeholder und Teammitglieder ein, die Anwendungsfalldokumentation zu überprüfen und Feedback zu geben. Dies stellt sicher, dass alle Anforderungen korrekt erfasst wurden und mögliche Unklarheiten oder Lücken geklärt werden.
 
+#
+#
 
 # Anforderungsanalyse mit User Stories und Epics
 Arbeite dich in die Grundprinzipien der Anforderungsanalyse mit User-Stories und Epics ein.
@@ -226,7 +229,7 @@ Arbeite dich in die Grundprinzipien der Anforderungsanalyse mit User-Stories und
 ## Grundlagen
 Anforderungsanalyse ist ein wichtiger Prozess in der Softwareentwicklung, bei dem die Bedürfnisse und Erwartungen der Benutzer ermittelt und dokumentiert werden. User Stories und Epics sind zwei gängige Werkzeuge, die in agilen Entwicklungsframeworks wie Scrum verwendet werden, um Anforderungen zu erfassen und zu organisieren.
 
-User Stories:
+- User Stories:
 User Stories sind kurze, einfache Beschreibungen einer Funktion aus der Perspektive eines Endbenutzers. Sie bestehen aus drei Hauptelementen:
 
 1. Rolle (Wer): Beschreibt die Art des Benutzers oder die Rolle, die die Funktion nutzen wird.
@@ -236,7 +239,7 @@ User Stories folgen oft dieser Struktur: "Als [Rolle] möchte ich [Funktion], um
 
 Ein Beispiel: "Als Online-Shop-Kunde möchte ich die Möglichkeit haben, meine Lieferadresse zu ändern, damit meine Bestellung an die richtige Adresse geliefert wird."
 
-Epics:
+- Epics:
 Epics sind größere, komplexere Anforderungen, die in mehrere kleinere User Stories aufgeteilt werden können. Sie sind oft schwer zu schätzen und erfordern mehrere Iterationen, um vollständig umgesetzt zu werden. Epics helfen, das Projekt in überschaubare Teile zu zerlegen, die leichter zu verwalten und umzusetzen sind.
 
 Ein Beispiel für ein Epic: "Implementierung eines Kundenbindungsprogramms für den Online-Shop."
@@ -252,28 +255,28 @@ Zusammengefasst helfen User Stories und Epics dabei, Anforderungen in leicht ver
 ## Vorgehensweisen
 Bei der Anforderungsanalyse mit User Stories und Epics gibt es mehrere Vorgehensweisen, um effektiv und effizient zu arbeiten.
 
-1. Identifizierung der Stakeholder:
+- Identifizierung der Stakeholder:
 Identifizieren Sie zunächst alle relevanten Stakeholder, die an dem Projekt beteiligt sind oder von ihm betroffen sein könnten, wie z. B. Endbenutzer, Projektmanager, Entwickler und Kunden.
 
-2. Sammeln von Anforderungen:
+- Sammeln von Anforderungen:
 Arbeiten Sie eng mit den Stakeholdern zusammen, um Anforderungen zu ermitteln und zu dokumentieren. Verwenden Sie Techniken wie Interviews, Workshops, Fragebögen und Beobachtungen, um ein klares Verständnis der Bedürfnisse und Ziele der Benutzer zu gewinnen.
 
-3. Erstellung von User Stories:
+- Erstellung von User Stories:
 Schreiben Sie User Stories, die die Anforderungen aus der Perspektive des Benutzers beschreiben. Achten Sie darauf, dass die User Stories die Rolle, die Funktion und den Nutzen enthalten, und dass sie klar und prägnant formuliert sind.
 
-4. Identifizierung von Epics:
+- Identifizierung von Epics:
 Suchen Sie nach größeren, komplexeren Anforderungen, die in mehrere User Stories aufgeteilt werden können, und erstellen Sie entsprechende Epics. Ein Epic sollte einen übergeordneten Zweck oder ein Ziel repräsentieren, das durch die zugehörigen User Stories erreicht werden soll.
 
-5. Priorisierung:
+- Priorisierung:
 Arbeiten Sie mit den Stakeholdern zusammen, um die User Stories und Epics nach ihrer Dringlichkeit und Wichtigkeit zu priorisieren. Sie können Techniken wie die MoSCoW-Methode (Must-have, Should-have, Could-have, Won't-have) oder den Business-Value-Ansatz verwenden, um eine Rangfolge festzulegen.
 
-6. Planung und Schätzung:
+- Planung und Schätzung:
 Planen Sie die Umsetzung der User Stories und Epics in den entsprechenden Entwicklungszyklen (Sprints) und schätzen Sie die benötigte Zeit und Ressourcen. Sie können Schätztechniken wie Planning Poker oder T-Shirt-Größen verwenden, um die relativen Aufwände zu bestimmen.
 
-7. Überprüfung und Anpassung:
+- Überprüfung und Anpassung:
 Überprüfen Sie regelmäßig den Fortschritt und passen Sie Ihre Prioritäten und Pläne entsprechend an. Agile Methoden legen Wert auf kontinuierliche Verbesserung und Flexibilität, um auf Veränderungen in den Anforderungen oder dem Projektumfeld reagieren zu können.
 
-8. Validierung und Abnahme:
+- Validierung und Abnahme:
 Stellen Sie sicher, dass die umgesetzten User Stories und Epics die ursprünglichen Anforderungen erfüllen und von den Stakeholdern abgenommen werden. Dies gewährleistet, dass das Produkt die Bedürfnisse der Benutzer erfüllt und den gewünschten Wert liefert.
 
 ## Werkzeuge
@@ -316,38 +319,145 @@ Verwenden Sie visuelle Darstellungen wie Story Maps, um den Zusammenhang zwische
 - Kommunikation und Zusammenarbeit:
 Fördern Sie offene Kommunikation und Zusammenarbeit im Team, um sicherzustellen, dass alle Mitglieder über die Anforderungen und deren Bedeutung im Klaren sind. Halten Sie regelmäßige Meetings und Diskussionen ab, um gemeinsam an User Stories und Epics zu arbeiten und Probleme oder Unklarheiten zu klären.
 
+#
+#
 # Wichtige UML-Diagrammarten
+UML (Unified Modeling Language) ist eine standardisierte visuelle Modellierungssprache, die in der Softwareentwicklung verwendet wird, um die Struktur, das Verhalten und die Architektur von Softwaresystemen darzustellen. UML-Diagramme sind grafische Darstellungen, die verschiedene Aspekte eines Systems veranschaulichen und dabei verschiedene UML-Notationen verwenden.
 
 ## Klassendiagramm
-
 ### Einsatzzweck
+Klassendiagramme sind ein wichtiges Werkzeug in der Softwareentwicklung und haben mehrere Einsatzzwecke, die dazu beitragen, ein besseres Verständnis der Struktur und Beziehungen innerhalb eines Softwaresystems zu erlangen:
+
+- Systemdesign und -architektur:
+Klassendiagramme helfen Entwicklern und Architekten, die Struktur und Architektur eines Softwaresystems zu entwerfen und zu visualisieren. Sie ermöglichen es, Klassen, Attribute, Methoden und Beziehungen zwischen Klassen zu identifizieren und zu organisieren, um ein kohärentes und effizientes Design zu erstellen.
+
+- Analyse und Modellierung von Anforderungen:
+Klassendiagramme können verwendet werden, um die Anforderungen eines Systems zu analysieren und zu modellieren. Sie helfen, die Hauptkonzepte, Entitäten und Beziehungen innerhalb des Systems zu identifizieren und deren Zusammenwirken zu verstehen.
+
+- Kommunikation und Zusammenarbeit:
+Klassendiagramme dienen als gemeinsame visuelle Sprache, die Teammitgliedern, Stakeholdern und Kunden hilft, die Struktur und Beziehungen innerhalb eines Systems besser zu verstehen. Sie erleichtern die Kommunikation und fördern die Zusammenarbeit bei der Planung, Entwicklung und Wartung von Softwareprojekten.
+
+- Dokumentation:
+Klassendiagramme sind ein effektives Mittel zur Dokumentation von Softwaresystemen. Sie bieten eine strukturierte und leicht verständliche Darstellung der Klassen, Attribute, Methoden und Beziehungen, die im System implementiert sind. Diese Dokumentation ist nützlich für das Verständnis, die Wartung und die Erweiterung des Systems im Laufe der Zeit.
+
+- Codegenerierung:
+Einige UML-Tools unterstützen die automatische Codegenerierung aus Klassendiagrammen. Dies kann die Entwicklung beschleunigen und Konsistenz zwischen Design und Code sicherstellen, indem Klassen, Attribute und Methoden direkt aus dem Klassendiagramm in den Programmcode übertragen werden.
+
+Insgesamt sind Klassendiagramme ein wertvolles Werkzeug für die Planung, Analyse, Kommunikation und Dokumentation von Softwaresystemen. Sie tragen dazu bei, ein klareres Verständnis der Struktur und Beziehungen innerhalb eines Systems zu erlangen und die Qualität der entwickelten Software zu verbessern.
+
 
 ### Wesentliche Notationsformen
+- Klassen: Klassen werden durch Rechtecke dargestellt, die in drei horizontale Abschnitte unterteilt sind. Der obere Abschnitt enthält den Klassennamen, der mittlere Abschnitt enthält die Attribute und der untere Abschnitt zeigt die Methoden.
+
+- Attribute: Attribute sind Eigenschaften oder Daten, die einer Klasse zugeordnet sind. Sie werden im mittleren Abschnitt der Klasse aufgelistet und können den Datentyp, den Namen und den Standardwert des Attributs enthalten.
+
+- Methoden: Methoden sind Operationen oder Funktionen, die von einer Klasse ausgeführt werden können. Sie werden im unteren Abschnitt der Klasse aufgelistet und können den Rückgabetyp, den Namen und die Parameter der Methode enthalten.
+
+- Beziehungen zwischen Klassen: Beziehungen zwischen Klassen werden durch verschiedene Linien und Symbole dargestellt, die die Art der Beziehung anzeigen. Die häufigsten Beziehungstypen sind:
+
+    - Assoziation: Eine einfache bidirektionale oder unidirektionale Beziehung zwischen zwei Klassen, die durch eine Linie dargestellt wird.
+
+    - Aggregation: Eine "enthält"-Beziehung, bei der eine Klasse (der Container) eine Sammlung von Objekten einer anderen Klasse (Teilobjekte) enthält. Dies wird durch eine Linie mit einem offenen Diamanten am Ende des Containerobjekts dargestellt.
+
+    - Komposition: Eine stärkere Form der Aggregation, bei der die Lebensdauer der Teilobjekte von der Lebensdauer des Containerobjekts abhängt. Dies wird durch eine Linie mit einem geschlossenen Diamanten am Ende des Containerobjekts dargestellt.
+
+    - Vererbung (Generalisierung): Eine "ist-ein"-Beziehung zwischen einer Unterklasse (abgeleitete Klasse) und einer Oberklasse (Basisklasse). Dies wird durch eine Linie mit einem leeren Dreieck am Ende der Basisklasse dargestellt.
+
+- Abhängigkeit: Eine Beziehung, bei der eine Klasse von einer anderen abhängt, zum Beispiel durch Nutzung ihrer Funktionen. Dies wird durch eine gestrichelte Linie mit einem offenen Pfeil am Ende der abhängigen Klasse dargestellt.
+
 
 ### Exemplarische Anwendung Beispiel
 
 
 
 ## Sequenzdiagramm
-
 ### Einsatzzweck
+Sequenzdiagramme sind eine Art von Verhaltensdiagramm in der Unified Modeling Language (UML), das zur Darstellung von Interaktionen und Kommunikation zwischen Objekten in einem Softwaresystem verwendet wird. Sie zeigen die zeitliche Abfolge von Nachrichten, die zwischen Objekten ausgetauscht werden, und wie diese Nachrichten in zeitlicher Reihenfolge verarbeitet werden. Sequenzdiagramme haben mehrere Einsatzzwecke:
+
+- Analyse von Interaktionen und Abläufen:
+Sequenzdiagramme ermöglichen die Analyse von Interaktionen und Abläufen innerhalb eines Systems. Sie zeigen, wie Objekte miteinander kommunizieren und wie sie auf eingehende Nachrichten reagieren. Diese Informationen sind nützlich, um den Informationsfluss, die Abhängigkeiten und die Kollaboration zwischen Objekten besser zu verstehen.
+
+- Identifikation von Systemkomponenten und Schnittstellen:
+Sequenzdiagramme helfen Entwicklern, Systemkomponenten und ihre Schnittstellen zu identifizieren. Sie zeigen, welche Objekte miteinander interagieren und welche Nachrichten sie austauschen. Diese Informationen sind hilfreich, um die Struktur und Architektur des Systems zu entwerfen und zu planen.
+
+- Veranschaulichung von Anwendungsfällen und Szenarien:
+Sequenzdiagramme können verwendet werden, um Anwendungsfälle und Szenarien in einem System zu veranschaulichen. Sie zeigen, wie verschiedene Objekte zusammenarbeiten, um bestimmte Anforderungen und Funktionen des Systems zu erfüllen. Dies hilft Entwicklern und Stakeholdern, die Funktionsweise und den Ablauf von Anwendungsfällen besser zu verstehen.
+
+- Kommunikation und Zusammenarbeit:
+Sequenzdiagramme dienen als gemeinsame visuelle Sprache für Teammitglieder, Stakeholder und Kunden. Sie erleichtern die Kommunikation über Systeminteraktionen und -abläufe und fördern die Zusammenarbeit bei der Planung, Entwicklung und Wartung von Softwareprojekten.
+
+- Dokumentation:
+Sequenzdiagramme sind ein effektives Mittel zur Dokumentation von Softwaresystemen. Sie bieten eine strukturierte und leicht verständliche Darstellung der Interaktionen und Kommunikation zwischen Objekten. Diese Dokumentation ist nützlich für das Verständnis, die Wartung und die Erweiterung des Systems im Laufe der Zeit.
+
+- Validierung und Verifizierung:
+Sequenzdiagramme können zur Validierung und Verifizierung von Systemanforderungen und -funktionen verwendet werden. Sie ermöglichen die Überprüfung, ob die geplanten Interaktionen und Abläufe den Anforderungen entsprechen und ob sie konsistent und logisch sind.
 
 ### Wesentliche Notationsformen
+- Lebenslinien (Lifelines): Lebenslinien repräsentieren die Objekte oder Akteure, die an der Interaktion beteiligt sind. Sie werden als vertikale gestrichelte Linien dargestellt, die von einem Rechteck ausgehen, das den Namen des Objekts oder des Akteurs enthält.
+
+- Nachrichten: Nachrichten sind Kommunikationseinheiten, die zwischen Objekten oder Akteuren ausgetauscht werden. Sie werden als horizontale Pfeile dargestellt, die von der sendenden Lebenslinie zur empfangenden Lebenslinie zeigen. Die Pfeile sind beschriftet, um den Typ der Nachricht und optional auch die Parameter anzuzeigen.
+
+- Aktivierungsbalken: Aktivierungsbalken repräsentieren die Zeit, in der ein Objekt oder Akteur eine Aktion ausführt oder eine Methode verarbeitet. Sie werden als schmale Rechtecke auf der Lebenslinie dargestellt, die sich über die Dauer der Aktivität erstrecken.
+
+- Rückgabepfeile: Rückgabepfeile zeigen die Antwort einer Methode oder Aktion an, die an den ursprünglichen Sender zurückgesendet wird. Sie werden als gestrichelte horizontale Pfeile dargestellt und sind in der Regel beschriftet, um den Rückgabewert oder das Ergebnis der Aktion anzuzeigen.
+
+- Zeitpunkte und Zeitdauerbedingungen: Zeitpunkte und Zeitdauerbedingungen können verwendet werden, um zeitliche Einschränkungen oder Bedingungen in Sequenzdiagrammen auszudrücken. Zeitpunkte werden als kleine Kreuze auf einer Lebenslinie dargestellt, während Zeitdauerbedingungen als Anmerkungen in eckigen Klammern neben den entsprechenden Aktivierungsbalken oder Nachrichten angezeigt werden.
+
+- Alternativen, Optionen und Schleifen: Sequenzdiagramme können kombinierte Fragmente enthalten, um bedingte Flüsse, Optionen und Schleifen auszudrücken. Kombinierte Fragmente werden als Rechtecke mit gestrichelten Linien dargestellt, die einen oder mehrere Interaktionsabschnitte umschließen. Sie enthalten eine Bedingung oder einen Operator (z. B. "alt" für Alternativen, "opt" für Optionen oder "loop" für Schleifen) in eckigen Klammern in der oberen linken Ecke des Rechtecks.
+
+- Asynchrone Nachrichten: Asynchrone Nachrichten sind Kommunikationseinheiten, die ohne Blockierung des Senders weitergeleitet werden. Sie werden als Pfeile mit offener Pfeilspitze dargestellt und zeigen an, dass der Sender nicht auf eine Antwort warten muss, bevor er fortfährt.
+
 
 ### Exemplarische Anwendung Beispiel
 
 
 
 ## Zustandsdiagramm
-
 ### Einsatzzweck
+Zustandsdiagramme, auch bekannt als Zustandsmaschinen, sind eine Art von Verhaltensdiagramm in der Unified Modeling Language (UML). Sie werden verwendet, um das Verhalten eines Objekts oder Systems in Bezug auf seine Zustände und Übergänge zwischen diesen Zuständen darzustellen. Zustandsdiagramme haben mehrere Einsatzzwecke:
+
+- Modellierung von Zustandsabhängigem Verhalten:
+Zustandsdiagramme ermöglichen die Modellierung des zustandsabhängigen Verhaltens von Objekten oder Systemen. Sie zeigen, wie sich ein Objekt oder System aufgrund von Ereignissen oder Bedingungen von einem Zustand in einen anderen Zustand bewegt. Dies ist nützlich, um das dynamische Verhalten und die Lebenszyklen von Objekten oder Systemen besser zu verstehen.
+
+- Analyse und Design von Systemen:
+Zustandsdiagramme können bei der Analyse und dem Design von Systemen eingesetzt werden. Sie ermöglichen es, die verschiedenen Zustände und Übergänge, die ein System durchlaufen kann, sowie die Ereignisse oder Bedingungen, die diese Übergänge auslösen, zu identifizieren und zu organisieren. Dies hilft bei der Planung und Strukturierung der Systemarchitektur und der Implementierung von zustandsabhängigen Funktionen.
+
+- Veranschaulichung von Anwendungsfällen und Szenarien:
+Zustandsdiagramme können verwendet werden, um Anwendungsfälle und Szenarien in einem System zu veranschaulichen. Sie zeigen, wie ein Objekt oder System seinen Zustand aufgrund von Ereignissen oder Bedingungen ändert, um bestimmte Anforderungen und Funktionen des Systems zu erfüllen. Dies hilft Entwicklern und Stakeholdern, die Funktionsweise und den Ablauf von Anwendungsfällen besser zu verstehen.
+
+- Kommunikation und Zusammenarbeit:
+Zustandsdiagramme dienen als gemeinsame visuelle Sprache für Teammitglieder, Stakeholder und Kunden. Sie erleichtern die Kommunikation über das zustandsabhängige Verhalten von Objekten oder Systemen und fördern die Zusammenarbeit bei der Planung, Entwicklung und Wartung von Softwareprojekten.
+
+- Dokumentation:
+Zustandsdiagramme sind ein effektives Mittel zur Dokumentation von Softwaresystemen. Sie bieten eine strukturierte und leicht verständliche Darstellung der Zustände, Übergänge, Ereignisse und Bedingungen, die im System implementiert sind. Diese Dokumentation ist nützlich für das Verständnis, die Wartung und die Erweiterung des Systems im Laufe der Zeit.
+
+- Validierung und Verifizierung:
+Zustandsdiagramme können zur Validierung und Verifizierung von Systemanforderungen und -funktionen verwendet werden. Sie ermöglichen die Überprüfung, ob das geplante zustandsabhängige Verhalten den Anforderungen entspricht und ob es konsistent und logisch ist.
+
+Insgesamt sind Zustandsdiagramme ein wertvolles Werkzeug für die Planung, Analyse, Kommunikation und Dokumentation von Softwaresystemen. Sie tragen dazu bei, ein klareres Verständnis des zustandsabhängigen Verhaltens von Objekten oder Systemen zu erlangen und die Qualität
+
 
 ### Wesentliche Notationsformen
+Zustandsdiagramme in der Unified Modeling Language (UML) verwenden mehrere Notationsformen, um Zustände, Übergänge und andere Aspekte des zustandsabhängigen Verhaltens darzustellen.
+
+Zustände: Ein Zustand wird in einem Zustandsdiagramm durch einen Kreis oder eine Ellipse dargestellt. Der Name des Zustands wird im Kreis oder der Ellipse angegeben.
+
+- Übergänge: Ein Übergang beschreibt den Wechsel eines Systems von einem Zustand in einen anderen. Ein Übergang wird durch eine Pfeillinie dargestellt, die den Zustand, aus dem das System herausgeht, mit dem Zustand verbindet, in den es eintritt. Der Übergang kann auch mit einer Bedingung oder Aktion versehen werden, die angeben, wann der Übergang stattfindet und welche Aktionen während des Übergangs ausgeführt werden sollen.
+
+- Startzustand: Ein Startzustand wird durch einen Kreis mit einem Pfeil dargestellt, der auf den ersten Zustand zeigt. Er zeigt an, in welchem Zustand das System beim Start des Zustandsdiagramms ist.
+
+- Endzustand: Ein Endzustand wird durch einen doppelten Kreis dargestellt. Er zeigt an, dass das System in diesem Zustand beendet wird.
+
+- Historienzustand: Ein Historienzustand wird durch einen Kreis mit einem H dargestellt. Er zeigt an, dass das System in den zuletzt besuchten Zustand zurückkehren wird.
+
+- Vertikale Gruppierung: Zustandsdiagramme können durch horizontale oder vertikale Gruppierung in Teile gegliedert werden. Diese Gruppierungen helfen dabei, komplexe Zustandsdiagramme übersichtlicher darzustellen.
+
 
 ### Exemplarische Anwendung Beispiel
 
 
-
+#
+#
 # Textuelles Diagramm Design-Tool
 
 ## PlantUML
@@ -355,15 +465,20 @@ Fördern Sie offene Kommunikation und Zusammenarbeit im Team, um sicherzustellen
 ## Mermaid
 
 
-
+#
+#
 # USE-CASE-DIAGRAMM 1
 Interpretieren Sie schriftlich das folgende Use-Case-Diagramm:
+![Use-Case Diagramm 1](images/use_case_dia-1.png)
 
-
+#
+#
 # USE-CASE-DIAGRAMM 2
 Interpretieren Sie schriftlich das folgende Use-Case-Diagramm:
+![Use-Case Diagramm 2](images/use_case_dia-2.png)
 
-
+#
+#
 # USE-CASE-DIAGRAMM 3
 Entwerfen Sie ein Anwendungsfalldiagramm zu der folgenden Beschreibung:
 Es soll ein Anwendungssystem zur Unterstützung der Geschäftsprozesse in einem Krankenhaus
@@ -378,8 +493,124 @@ diese Tätigkeit in einen gesonderten Anwendungsfall ausgelagert.
 Krankenhauses hat, wird geprüft, ob die angegebene Adresse am Wohnort existiert. Lagern Sie auch
 diesen Anwendungsfall aus.
 
+#
+#
 # USE-CASE-DETAILBESCHREIBUNGEN
 Definieren Sie die Use-Case-Details (level, complexity, status, pre-conditions, post-conditions and assumptions,
 event flow etc.) für einige Use-Cases der vorhergehenden Use-Case-Übungen. Verwenden Sie dazu eine der
 bereitgestellten Schablonen bzw. ein entsprechendes Software-Tool.
 Schablone A
+![Schablone A](images/schablone_a.jpg)
+
+Schablone B
+![Schablone B](images/schablone_b.jpg)
+
+
+#
+#
+# KLASSENDIAGRAMME 1
+Gegeben ist folgendes Klassendiagramm:
+![Klassendiagramm 1](images/klassendiagramm_1.png)
+
+Bestimmen Sie, ob die folgenden Aussagen zum Klassendiagramm richtig oder falsch sind.
+- Es kann im System Kunden geben die nie eine Bestellung durchgeführt haben.
+- Die Klasse Einzahlung ist die Oberklasse der Klasse Bestellung.
+- Jedes Objekt der Klasse Bestellung_Detail besitzt genau einen Artikel.
+- Alle Einzahlungen mit Kreditkarte haben einen Betrag.
+- Es ist möglich, dass ein Artikel keine Assoziation mit einem Bestellung_Detail besitzt.
+- Jedes Bestellung_Detail, das Teil einer Bestellung ist, hat seinen eigenen Status und sein eigenes
+Datum.
+
+#
+#
+# KLASSENDIAGRAMME 2
+Gegeben ist der folgende Sachverhalt.
+> Jede Person hat einen Namen, eine Telefonnummer und E-Mail. Jede Wohnadresse wird von nur einer
+Person bewohnt. Es kann aber sein, dass einige Wohnadressen nichtbewohnt sind. Den Wohnadressen sind
+je eine Strasse, eine Stadt, eine PLZ und ein Land zugeteilt. Alle Wohnadressen können bestätigt werden
+und als Beschriftung (für Postversand) gedruckt werden. Es gibt zwei Sorten von Personen: Student, welcher
+sich für ein Modul einschreiben kann und Professor, welcher einen Lohn hat. Der Student besitzt eine
+Matrikelnummer und eine Durchschnittsnote.
+
+Modellieren Sie diesen Sachverhalt mit einem UML Klassendiagramm.
+
+#
+#
+# KLASSENDIAGRAMME 3
+Sie haben den Auftrag, eine Online-Videothek zu realisieren. Sie haben dazu folgende Angaben erhalten:
+- Die Videothek unterstützt das Ausleihen von Filmen für registrierte Kunden. Dazu müssen
+- Kunden sich zunächst mit ihrer Kundennummer und ihrem Passwort anmelden.
+- Kunden werden zusammen mit ihrem Guthaben verwaltet.
+- Filme besitzen einen individuellen Namen und Preis.
+- Ein Film wird über einen Streaming-Server bereitgestellt. Der Server kann hierzu einen
+kundenspezifischen Link generieren.
+
+Modellieren Sie diesen Sachverhalt anhand eines Klassendiagramms. Wählen Sie sinnvolle Operationen (mit
+möglichst vollständigen Signaturen) und Attribute für Ihre Klassen. Ergänzen Sie die Klassen um sinnvolle
+Beziehungen und deren Kardinalitäten.
+
+#
+#
+# KLASSENDIAGRAMME 4
+Interpretieren Sie schriftlich das folgende Klassendiagramm:
+![Klassendiagramm 4](images/klassendiagramm_4.png)
+
+#
+#
+# SEQUENZDIAGRAMM 1
+Interpretieren Sie schriftlich das folgende Sequenzdiagramm:
+![Sequenzdiagramm 1](images/sequenzdiagramm_1.png)
+
+#
+#
+# SEQUENZDIAGRAMM 2
+Modellieren Sie für die Online-Videothek (siehe Aufgabe 3) die Film Ausleihen Funktion. Erstellen Sie dazu ein
+Sequenzdiagramm für folgenden Ablauf der Ausleihe:
+• Die Videothek berechnet zuerst, ob das Guthaben des Kunden reicht um den Film zu bezahlen.
+• Reicht das Guthaben nicht aus, wird stattdessen eine Aufforderung zum Ausfüllen des Guthabens
+angezeigt.
+• Falls das aktuelle Guthaben des Mitglieds ausreicht, veranlasst die Videothek einen Streaming-
+Server einen Link für den Film zu generieren.
+• Die Videothek zeigt dem Benutzer den Link an, unter dem der Film zugreifbar ist.
+Gehen Sie davon aus, dass sich das Mitglied bereits auf der Seite des gewünschten Films beendet.
+
+#
+#
+# AKITIVITÄTSDIAGRAMM 1
+Interpretieren Sie schriftlich das folgende Aktivitätsdiagramm:
+![Aktivitätsdiagramm 1](images/aktivitaetsdiagramm_1.png)
+
+#
+#
+# AKITIVITÄTSDIAGRAMM 2
+Modellieren Sie schriftlich den folgenden Sachverhalt als Aktivitätsdiagramm:
+> Ein Fluggast ist am Flughafen angekommen. Zur Überprüfung seines Tickets begibt er sich zum
+Schalterseiner Fluggesellschaft. Falls das Ticket in Ordnung ist, übergibt er am Schalter sein Gepäck. Falls
+mit dem Ticket etwas nicht stimmt, muss der Fluggast den Kundendienst konsultieren und er kann
+nichtmitfliegen. Das Gepäck wird zudem auf Übergewicht überprüft. Falls dem so ist, muss der Fluggast
+zusätzliche Kostenübernehmen. Falls aber das Gewicht in Ordnung ist, wird die Bordkarte ausgestellt.
+
+#
+#
+# ZUSTANDSDIAGRAMM 1
+Interpretieren Sie schriftlich das folgende Zustandsdiagramm:
+![Zustandsdiagramm 1](images/zustandsdiagramm_1.png)
+
+#
+#
+# ZUSTANDSDIAGRAMM 2
+Entwerfen Sie ein Zustandsdiagramm für eine Bestellung auf Amazon. Modellieren Sie dazu die Zustände und
+die Übergänge einer Bestellung vom Aufgeben der Bestellung bis hin zur Aushändigung des Paketes an den
+Kunden.
+
+#
+#
+# C4-DIAGRAMM
+Arbeite dich in das C4-Modell zur Visualisierung von Architekturen von Softwaresystemen ein.
+https://c4model.com
+Dokumentieren Sie danach die Architektur deines Spring-Boot-Abschlussprojektes aus dem Unterricht mit dem
+C4-Diagrammmodell:
+- Level 1: System Context diagram
+- Level 2: Container diagramm
+- Level 3: Component diagramm
+- Level 4: Klassendiagramm (Beispielhaft nur für ein paar Komponenten aus Level 3)
