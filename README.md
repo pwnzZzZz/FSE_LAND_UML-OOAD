@@ -367,6 +367,19 @@ Insgesamt sind Klassendiagramme ein wertvolles Werkzeug für die Planung, Analys
 
 
 ### Exemplarische Anwendung Beispiel
+![Klassendiagramm Tierheim](images/klassendiagramm_tierheim.jpg)
+
+In diesem Beispiel, sehen wir ein Klassendiagramm von einem Tierheim.
+
+Es gibt eine Beziehung zwischen der Klasse Hund und der Klasse Tierpfleger, gekennzeichnet durch die einfache Verbindungslinie. Beide Klassen können ohne die andere exisitieren.
+
+Zwischen Hund und Fressnapf, besteht eine sogenannte Verwendungsbeziehung, erkennbar an der strichlierten Verbindung.
+
+Das Tierheim besitzt Datenfelder (Instanzen) vom Typ Tierpfleger und vom Typ Hund.
+Die Beziehung zwischen Tierpfleger und Tierheim, sowie Hund und Tierheim mit der leeren Diamantnotation wird als Aggregation bezeichnet. Dies bedeutet, dass die Klasse Hund und Klasse Tierpfleger auch ohne ein Tierheim exitieren können.
+
+Hingegen wird die Beziehung zwischen Fressnap und Futter mit der ausgefüllten Diamantnotation als Komposition bezeichnet. Bei diesem Assoziationstyp ist die Beziehung so stark, dass mit dem Löschen des „Behälterobjekts“ auch das integrierte Objekt verschwindet.
+
 
 
 
@@ -409,6 +422,19 @@ Sequenzdiagramme können zur Validierung und Verifizierung von Systemanforderung
 
 
 ### Exemplarische Anwendung Beispiel
+![Aktivitätsdiagramm Kochen](images/aktivitaetsdiagramm_kochen.png)
+
+In diesem Beispiel sehen wir ein einfaches Sequenzdiagramm, dass einen Koch zeigt, der den Herd ein- und ausschalten kann.
+
+Links oben im Kopfbereich steht der Diagrammname. Bei Sequenzdiagrammen wird das Schlüsselwort sd oder interaction vorangestellt.
+
+Die Kommunikationspartner werden als beschriftete Rechtecke dargestellt. Von jedem geht eine gestrichelte Linie abwärts, sie stellt die Lebenslinie dar.
+
+Zwischen den Lebenslinien befinden sich die synchronen Operationsaufrufe (Nachrichten).
+Der Name der Nachricht befindet
+
+1. Der Koch schaltet den Herd ein.
+2. Erst nachdem dies getan wurde, kann der Koch den Herd wieder ausschalten.
 
 
 
@@ -454,7 +480,14 @@ Zustände: Ein Zustand wird in einem Zustandsdiagramm durch einen Kreis oder ein
 
 
 ### Exemplarische Anwendung Beispiel
+![Zustandsdiagramm Klausur](images/zustandsdiagramm_klausur.avif)
 
+In diesem einfachen Beispiele, sehen wir ein Zustandsdiagramm für Klausuren.
+
+Es wird links oben gestartet, beim Startzustand (Pseudozustand) und dann wird die erste Aktion Punkte addieren ausgeführt. Nach diesem Schritt, treffen wir auf einen Entscheidungsknoten.
+Ist die Klausur schlecht ausgefallen, kommen wir zur nächsten Aktion Klausur nicht bestanden und springen direkt zum Endzustand.
+
+Falls die Klausur mit >= 100 Punkten abgeschlossen wurde, kommen wir zur Aktion Klausur bestanden und im Anschluss zur Aktion Note ermittelt. Dies führt zu einer Gabelung, wobei die Note veröffentlicht und der Studienschein ausgestellt wird. Schließlich kommt es wieder zur Vereinigung und dann zum Endzustand.
 
 #
 #
@@ -469,7 +502,9 @@ Zustände: Ein Zustand wird in einem Zustandsdiagramm durch einen Kreis oder ein
 #
 # USE-CASE-DIAGRAMM 1
 Interpretieren Sie schriftlich das folgende Use-Case-Diagramm:
-![Use-Case Diagramm 1](images/use_case_dia-1.png)
+![Use-Case Diagramm 1](images/use_case_dia-1.webp)
+
+
 
 #
 #
@@ -578,7 +613,7 @@ Gehen Sie davon aus, dass sich das Mitglied bereits auf der Seite des gewünscht
 #
 # AKITIVITÄTSDIAGRAMM 1
 Interpretieren Sie schriftlich das folgende Aktivitätsdiagramm:
-![Aktivitätsdiagramm 1](images/aktivitaetsdiagramm_1.png)
+![Aktivitätsdiagramm 1](images/aktivitaetsdiagramm_1.webp)
 
 #
 #
@@ -594,7 +629,7 @@ zusätzliche Kostenübernehmen. Falls aber das Gewicht in Ordnung ist, wird die 
 #
 # ZUSTANDSDIAGRAMM 1
 Interpretieren Sie schriftlich das folgende Zustandsdiagramm:
-![Zustandsdiagramm 1](images/zustandsdiagramm_1.png)
+![Zustandsdiagramm 1](images/zustandsdiagramm_1.webp)
 
 #
 #
