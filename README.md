@@ -504,7 +504,18 @@ Falls die Klausur mit >= 100 Punkten abgeschlossen wurde, kommen wir zur Aktion 
 Interpretieren Sie schriftlich das folgende Use-Case-Diagramm:
 ![Use-Case Diagramm 1](images/use_case_dia-1.webp)
 
+In diesem Beispiel sehen wir ein Use-Case Diagramm für einen Online Shop. Der rechteckige Rahmen stellt unser System dar und grenzt den Kontext ab. Die Akteure befinden sich außerhalb des Systems und sind als Strichmännchen dargestellt. Akteure können konkrete Personen sein, aber auch abstrakte Elemente wie z.B. einen Service darstellen. Anweundungsfälle (Use-Cases) werden als Ellipse visualisiert. Zwischen den Akteuren und Anwendungsfällen bestehen unterschiedliche Beziehungen.
 
+Auf der linken Seite sehen wir die Kunden, wobei hier der "Web Customer" als Mutterklasse fungiert.
+Ein "Web Costumer" kann somit ein "Registered Customer", oder ein "New Customer" sein.
+
+Im Falle dass es sich um einen "New Customer" handelt, kann er sich lediglich über "View Items" Waren ansehn und sich über "Client Register" registrieren.
+
+Wenn es sich um einen "Registered Customer" kann sich dieser ebenfalls über "View Items" Waren anshen und zusätzlich über "Make Purchase" einen Kauf durchführen. "Make Purchase" inkludiert "View Items" und "Checkout", da kein Kauf Zustande kommt, wenn zuvor keine Waren hinzugefügt wurden und die Waren nicht bezahlt werden.
+
+Auf der rechten Seite sehen wir den Akteur "(Service) Authentication". Nachdem sich ein Neukunde registriert und authentifiziert kann er sich ebenfalls Waren ansehen und auschecken.
+"Identity Provider" steht in Beziehung mit "View Items" und "Checkout".
+Der Use-Case "Checkout" hat auch noch Beziehungen zu den restlichen 2 Akteuren, "Credit Payment Service" und "PayPal".
 
 #
 #
@@ -512,9 +523,27 @@ Interpretieren Sie schriftlich das folgende Use-Case-Diagramm:
 Interpretieren Sie schriftlich das folgende Use-Case-Diagramm:
 ![Use-Case Diagramm 2](images/use_case_dia-2.png)
 
+In diesem Beispiel eines Use-Case Diagramms sehen wir ein System, dass es registrierten Kunden ermöglicht Essen zu bestellen und bei Wunsch Online, mit verschiedenen Zahloptionen, zu bezahlen.
+
+Der Akteur "Hungriger Kunde" verwendet den Use-Case "Als Kunde registrieren" um sich zu registrieren. Nachdem erfolreichem registrieren, kann dieser den Anwendungsfall "Essen bestellen" verwenden. "Essen bestellen" hat eine include Beziehung zu "Bestellbestätigung senden", dies bedeutet dass zu jeder Bestellung eine Bestellbestätigung gesendet werden muss. Der Use-Case "Bestellbestätigung senden" kommuniziert mit dem Akteur "E-Mail-System" um diese zu versenden.
+
+Der Use-Case "Essen bestellen" hat ebenso eine extend Beziehung zu dem Use-Case "Online bezahlen". Das bedeutet, dass für den Kunden die Möglichkeit besteht online zu bezahlen, dies ist jedoch nicht verpflichtend. "Online bezahlen" fungiert als Mutterklasse für die Anwendungsfälle "Mit Kreditkarte bezahlen" und "Mit EC Karte bezahlen". Falls der Kunde dann online bezahlt, kommunizert der Use-Case "Online bezahlen" mit dem Akteur "Bezahlsystem" um die Bezahlung abzuschließen.
+
 #
 #
 # USE-CASE-DIAGRAMM 3
+Entwerfen Sie ein Anwendungsfalldiagramm zu der folgenden Beschreibung:
+
+In einem Kino kann ein Gast Kinokarten an der Kasse kaufen, die vorbestellt sein könnten. Außerdem ist es
+möglich Popcorn und Getränke zu bestellen. Danach bezahlt der Kunde beim Kassierer die Rechnung. Es ist
+auch möglich mit Kreditkarte zu bezahlen, welche bei Bedarf einer automatischen Prüfung unterzogen werden
+kann.
+
+![Use-Case Kino](out/use-case_kino/USE-CaseKino.png)
+
+#
+#
+# USE-CASE-DIAGRAMM 4
 Entwerfen Sie ein Anwendungsfalldiagramm zu der folgenden Beschreibung:
 Es soll ein Anwendungssystem zur Unterstützung der Geschäftsprozesse in einem Krankenhaus
 entwickelt werden. Das System soll folgende Aufgaben erledigen:
@@ -528,17 +557,112 @@ diese Tätigkeit in einen gesonderten Anwendungsfall ausgelagert.
 Krankenhauses hat, wird geprüft, ob die angegebene Adresse am Wohnort existiert. Lagern Sie auch
 diesen Anwendungsfall aus.
 
+![Use-Case Krankenhaus](out/use-case_krankenhaus/USE-Case%20Krankenhaus.png)
+
 #
 #
 # USE-CASE-DETAILBESCHREIBUNGEN
 Definieren Sie die Use-Case-Details (level, complexity, status, pre-conditions, post-conditions and assumptions,
 event flow etc.) für einige Use-Cases der vorhergehenden Use-Case-Übungen. Verwenden Sie dazu eine der
 bereitgestellten Schablonen bzw. ein entsprechendes Software-Tool.
-Schablone A
-![Schablone A](images/schablone_a.jpg)
 
+Schablone A
+![Schablone A](images/schablone_a.png)
 Schablone B
-![Schablone B](images/schablone_b.jpg)
+![Schablone B](images/schablone_b.png)
+
+
+Use-Case Detailbeschreibung lt. Schablone A (Auszug aus Use-Case Diagramm 2)
+![Use-Case Registrierung](images/use-case-Registrierung.png)
+
+<table class="tg">
+<tbody>
+  <tr>
+    <td class="tg-0pky">Name</td>
+    <td class="tg-0pky">Als Kunde registrieren</td>
+  </tr>
+  <tr>
+    <td class="tg-0pky">Ziel im Kontext</td>
+    <td class="tg-0pky">Ein hungriger Kunde registriert sich über die Lieferketten-App</td>
+  </tr>
+  <tr>
+    <td class="tg-0pky">Akteure</td>
+    <td class="tg-0pky">Hungriger Kunde</td>
+  </tr>
+  <tr>
+    <td class="tg-0pky">Trigger</td>
+    <td class="tg-0pky">Hungriger Kunde möchte bei der Lieferkette Essen bestellen</td>
+  </tr>
+  <tr>
+    <td class="tg-0pky">Essenzielle Schritte</td>
+    <td class="tg-0pky">
+      1. Der Kunde öffnet die App der Lieferkette auf seinem Handy. <br>
+      2. Der Kunde wählt die Option "Registrieren" aus. <br>
+      3. Der Kunde gibt seine korrekten Daten an und schickt diese ab.<br>
+      4. Der Kunde üprüft sein E-Mail Postfach und schließt die Registrierung über einen link ab.
+    </td>
+  </tr>
+  <tr>
+    <td rowspan=2 class="tg-0pky">Erweiterungen</td>
+    <td class="tg-0pky">
+      1.1. Auf Seiten der Lieferkette gibt es technische Probleme. <br>
+      1.2. Der Kunde kann die App nicht verwenden. <br>
+      1.3. Der Kunde kann sich nicht registrieren. <br>
+      1.4. Der Kunde schließt die App. 
+    </td>
+  </tr>
+  <tr>
+  <td class="tg-0pky">
+      3.1. Die angegebenen Daten waren nicht korrekt. <br>
+      3.2. Der Kunde wird aufgefordert die Fehler zu beheben. <br>
+      3.3. Die Bestellung wird von Seiten des Lieferanten storniert. 
+    </td>
+  </tr>
+</tbody>
+</table>
+
+
+Use-Case Detailbeschreibung lt. Schablone A (Auszug aus Use-Case Diagramm 2)
+![Use-Case Essen bestellen](images/use-case-EssenBestellen.png)
+
+<table class="tg">
+<tbody>
+  <tr>
+    <td class="tg-0pky">Name</td>
+    <td class="tg-0pky">Essen bestellen</td>
+  </tr>
+  <tr>
+    <td class="tg-0pky">Ziel im Kontext</td>
+    <td class="tg-0pky">Ein hungriger Kunde bestellt essen</td>
+  </tr>
+  <tr>
+    <td class="tg-0pky">Akteure</td>
+    <td class="tg-0pky">Hungriger Kunde</td>
+  </tr>
+  <tr>
+    <td class="tg-0pky">Trigger</td>
+    <td class="tg-0pky">Hungriger Kunde öffnet die App der Lieferkette</td>
+  </tr>
+  <tr>
+    <td class="tg-0pky">Essenzielle Schritte</td>
+    <td class="tg-0pky">
+      1. Der Kunde öffnet die App der Lieferkette auf seinem Handy. <br>
+      2. Der Kunde durchsucht die App nach Gerichten/Getränken. <br>
+      3. Der Kunde wählt ein oder mehrere Gerichte/Getränke seiner Wahl aus und fügt diese dem Warenkorb hinzu.<br>
+      4. Der Kunde schickt die Bestellung ab.
+    </td>
+  </tr>
+  <tr>
+    <td rowspan=2 class="tg-0pky">Erweiterungen</td>
+    <td class="tg-0pky">
+      1.1. Auf Seiten der Lieferkette gibt es technische Probleme. <br>
+      1.2. Der Kunde kann die App durchsuchen. <br>
+      1.3. Aufgrund der technischen Probleme kann der Kunde nichts in seinen Warenkorb legen. <br>
+      1.4. Der Kunde schließt die App. 
+    </td>
+  </tr>
+</tbody>
+</table>
 
 
 #
@@ -548,13 +672,12 @@ Gegeben ist folgendes Klassendiagramm:
 ![Klassendiagramm 1](images/klassendiagramm_1.png)
 
 Bestimmen Sie, ob die folgenden Aussagen zum Klassendiagramm richtig oder falsch sind.
-- Es kann im System Kunden geben die nie eine Bestellung durchgeführt haben.
-- Die Klasse Einzahlung ist die Oberklasse der Klasse Bestellung.
-- Jedes Objekt der Klasse Bestellung_Detail besitzt genau einen Artikel.
-- Alle Einzahlungen mit Kreditkarte haben einen Betrag.
-- Es ist möglich, dass ein Artikel keine Assoziation mit einem Bestellung_Detail besitzt.
-- Jedes Bestellung_Detail, das Teil einer Bestellung ist, hat seinen eigenen Status und sein eigenes
-Datum.
+- [x]	Es kann im System Kunden geben die nie eine Bestellung durchgeführt haben.
+- [ ]	Die Klasse Einzahlung ist die Oberklasse der Klasse Bestellung.
+- [x]	Jedes Objekt der Klasse Bestellung_Detail besitzt genau einen Artikel.
+- [x]	Alle Einzahlungen mit Kreditkarte haben einen Betrag.
+- [x]	Es ist möglich, dass ein Artikel keine Assoziation mit einem Bestellung_Detail besitzt.
+- [ ]	Jedes Bestellung_Detail, das Teil einer Bestellung ist, hat seinen eigenen Status und sein eigenes Datum.
 
 #
 #
@@ -568,6 +691,8 @@ sich für ein Modul einschreiben kann und Professor, welcher einen Lohn hat. Der
 Matrikelnummer und eine Durchschnittsnote.
 
 Modellieren Sie diesen Sachverhalt mit einem UML Klassendiagramm.
+
+![Klassendiagramm Person](out/klassendiagramm_person/Klassendiagramm%20Person.png)
 
 #
 #
@@ -584,11 +709,21 @@ Modellieren Sie diesen Sachverhalt anhand eines Klassendiagramms. Wählen Sie si
 möglichst vollständigen Signaturen) und Attribute für Ihre Klassen. Ergänzen Sie die Klassen um sinnvolle
 Beziehungen und deren Kardinalitäten.
 
+![Klassendiagramm Online-Videothek](out/klassendiagramm_onlinevideothek/Klassendiagramm%20OnlineVideothek.png)
+
 #
 #
 # KLASSENDIAGRAMME 4
 Interpretieren Sie schriftlich das folgende Klassendiagramm:
 ![Klassendiagramm 4](images/klassendiagramm_4.png)
+
+Das Beispiel zeigt ein Klassendiagramm für ein Spiel mit verschiedenen Klassen, die Raumschiffe, Laserschüsse und Schussvorrichtungen beschreiben.
+
+Es gibt eine abstrakte Klasse "Spielobjekt", das Eigenschaften wie x- und y-Koordinaten und Geschwindigkeit enthält. Die Klasse "Raumschiff" ist eine spezialisierte Form von Spielobjekt und hat zusätzliche Eigenschaften wie Schussenergie, Schussmodus und maximale Anzahl an Schussvorrichtungen. Raumschiffe können mehrere Laserschüsse abfeuern, die durch die abstrakte Klasse "Laserschuss" repräsentiert werden. Es gibt auch zwei spezialisierte Klassen von Laserschüssen, "LaserschussGroß" und "LaserschussKlein".
+
+Die abstrakte Klasse "Schussvorrichtung" enthält eine abstrakte Methode "schussErzeugen", die von den spezialisierten Schussvorrichtungen "VorrichtungGroß" und "VorrichtungKlein" implementiert wird. Die Mulitpilizität gibt an, das Raumschiffe zwischen 0 und 10 Schussvorrichtungen haben können.
+
+Das Diagramm enthält auch Methoden für das Zeichnen von Spielobjekten und Laserschüssen. Die Pfeile zwischen den Klassen zeigen die Beziehungen zwischen ihnen an, wie Vererbung und Assoziation.
 
 #
 #
@@ -608,6 +743,8 @@ angezeigt.
 Server einen Link für den Film zu generieren.
 • Die Videothek zeigt dem Benutzer den Link an, unter dem der Film zugreifbar ist.
 Gehen Sie davon aus, dass sich das Mitglied bereits auf der Seite des gewünschten Films beendet.
+
+![Sequenzdiagramm 2](out/sequenzdiagramm_onlinevideothek/Sequenzdiagramm%20Online-Videothek.png)
 
 #
 #

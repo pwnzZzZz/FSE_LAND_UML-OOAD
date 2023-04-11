@@ -1,0 +1,39 @@
+@startuml Sequenzdiagramm Online-Videothek
+skinparam linetype ortho
+
+skinparam sequenceMessageAlign center
+
+skinparam sequence {
+ArrowColor Black
+ActorBorderColor Black
+ActorFontName Courier
+LifeLineBorderColor Black
+LifeLineBackgroundColor White
+
+ParticipantBorderColor Black
+ParticipantBackgroundColor White
+
+ArrowColor Black
+ActorBorderColor Black
+
+ActorBackgroundColor<< Human >> Black
+}
+
+participant OnlineVideothek as V
+participant "Streaming-Server" as SS
+actor Kunde as K
+
+V -> K: getGuthaben()
+activate V
+K -->> V: returns Guthaben
+alt Guthaben reicht aus
+    V -> SS: generiereLink(film)
+    activate SS
+    SS -->> V: returns Link
+    deactivate SS
+    V -> K: showLink(link)
+else Zuwenig Guthaben
+    V -> K: ladeGuthabenAuf()
+end
+deactivate V
+@enduml

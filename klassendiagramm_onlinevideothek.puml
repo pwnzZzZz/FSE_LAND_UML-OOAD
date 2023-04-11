@@ -1,0 +1,23 @@
+@startuml Klassendiagramm OnlineVideothek
+class Kunde {
+    - kundennummer: int
+    - passwort: string
+    - guthaben: float
+    + login(kundennummer: int, passwort: string): bool
+    + ausleihen(film: Film)
+}
+
+class Film {
+    - name: string
+    - preis: float
+    + getLink(kunde: Kunde): string
+}
+
+class StreamingServer {
+    + generateLink(kunde: Kunde, film: Film): string
+}
+
+Kunde "1" -- "many" Film : leiht aus
+StreamingServer "1" o-- "many" Film : stellt bereit
+
+@enduml

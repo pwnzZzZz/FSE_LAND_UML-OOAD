@@ -1,0 +1,33 @@
+@startuml USE-Case Krankenhaus
+skinparam actorStyle awesome
+
+skinparam usecase {
+BackgroundColor LightGrey
+BorderColor Black
+
+
+ArrowColor Black
+ActorBorderColor Black
+ActorFontName Courier
+
+ActorBackgroundColor<< Human >> Black
+}
+left to right direction
+actor :Verwaltung1: as V
+actor :Verwaltung2: as V2
+actor :Adressdatenbank: as ADB
+
+rectangle Anwendungssystem {
+    
+  V -- (Mitarbeiter einstellen)
+  V -- (Mitarbeiter entlassen)
+  V -- (Patient aufnehmen)
+  V -- (Patient entlassen)
+  V2 -- (Patient aufnehmen)
+  V2 -- (Patient entlassen)
+  (Mitarbeiter einstellen) .> (Daten erfassen) : include
+  (Patient aufnehmen) .> (Daten erfassen) : include
+  (Daten erfassen) <. (Adressvalidierung) : extends
+  (Adressvalidierung) -- ADB
+}
+@enduml
