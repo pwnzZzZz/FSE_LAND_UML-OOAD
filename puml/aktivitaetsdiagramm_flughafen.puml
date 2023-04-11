@@ -1,0 +1,21 @@
+@startuml Aktivitätsdiagramm Flughafen
+
+title Aktivitätsdiagramm Flughafen
+|Flughafen|
+start
+:Ticket überprüfen;
+if (Ticket in Ordnung?) then (ja)
+  :Gepäck am Schalter aufgeben;
+  
+  if (Gepäckübergewicht?) then (ja)
+    :Zusätzliche Kosten berechnen;
+    :Bordkarte ausstellen;
+  else (nein)
+    :Bordkarte ausstellen;
+  endif
+else (nein)
+  :Kundendienst konsultieren;
+endif
+|Flughafen|
+end
+@enduml

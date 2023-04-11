@@ -1,0 +1,28 @@
+@startuml GrowManager_C4ComponentFrontend
+!include https://raw.githubusercontent.com/plantuml-stdlib/C4-PlantUML/master/C4_Component.puml
+!define DEVICONS https://raw.githubusercontent.com/tupadr3/plantuml-icon-font-sprites/master/devicons
+!define FONTAWESOME https://raw.githubusercontent.com/tupadr3/plantuml-icon-font-sprites/master/font-awesome-5
+' uncomment the following line and comment the first to use locally
+' !include C4_Container.puml
+!include FONTAWESOME/server.puml
+!include DEVICONS/database.puml
+!include FONTAWESOME/server.puml
+!include DEVICONS/bootstrap.puml
+!include DEVICONS/html5.puml
+
+title GrowManager C4Component-Diagram
+
+Container(webserver, "Apache Web Server", "HTTP Server", "Hostet den GrowManager", "server")
+
+Container_Boundary(growmanager, "GrowManager Thymeleaf Frontend") {
+    
+    Component(templates, "Templates", "HTML-Files", "Definieren den Aufbau der Website - Thymeleaf-Komponenten können auf Backend zugreifen", "html5")
+    Component(css, "CSS - Bootstrap", "Frontend-CSS-Framework", "Sorgt für Look and Feel der Anwendung", "bootstrap")
+    
+    Rel(templates, css, "verwendet")
+    Rel(webserver, growmanager, "Hostet")
+    
+    
+}
+
+@enduml

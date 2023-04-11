@@ -1,0 +1,52 @@
+@startuml GrowManager_C4CodeGrow1
+
+title GrowManager C4Code-Diagram
+
+package com.growmanager {
+    
+    class GrowManagerApplication
+    class SecurityConfig
+    
+    package com.growmanager.controllers {
+        class UserController
+        class PlantController
+    }
+    
+    package com.growmanager.entities {
+        class User
+        class Plant
+        class PlantData
+    }
+    
+    package com.growmanager.repositories {
+        class UserRepository
+        class PlantRepository
+        class PlantDataRepository
+    }
+    
+    package com.growmanager.services {
+        interface UserService
+        class UserServiceImpl
+        interface PlantService
+        class PlantServiceImpl
+        interface PlantDataService
+        class PlantDataServiceImpl
+    }
+    
+    UserController --> UserService
+    PlantController --> PlantService
+    PlantController --> PlantDataService
+    UserServiceImpl --> UserRepository
+    PlantServiceImpl --> PlantRepository
+    PlantDataServiceImpl --> PlantDataRepository
+    
+    Plant --> PlantData
+    User --> Plant
+    
+    GrowManagerApplication --> UserController
+    GrowManagerApplication --> PlantController
+    GrowManagerApplication --> SecurityConfig
+    
+}
+
+@enduml

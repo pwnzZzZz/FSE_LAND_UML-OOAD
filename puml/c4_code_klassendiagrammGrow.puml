@@ -1,0 +1,94 @@
+@startuml GrowManager_C4-CodeÜbersicht
+
+title GrowManager C4Code-Diagram
+
+package com.growmanager {
+
+    package com.growmanager.domain {
+        class Plant {
+            +id: Long
+            +name: String
+            +variety: String
+            +growthPeriod: Integer
+            +createdAt: LocalDate
+            +updatedAt: LocalDate
+        }
+
+        class Grow {
+            +id: Long
+            -plant: Plant
+            +startDate: LocalDate
+            +estimatedEndDate: LocalDate
+            +potSize: Float
+            +harvested: Boolean
+            +actualEndDate: LocalDate
+            +setStartDate(startDate: LocalDate): void
+        }
+    }
+
+    package com.growmanager.repository {
+        interface DbAccessGrow {
+            +saveGrow(grow: Grow): Grow
+            +allGrows(): List<Grow>
+            +allGrowsWithPlant(plant: Plant): List<Grow>
+            +growWithId(id: Long): Grow
+            +deleteGrowWithId(id: Long): Grow
+        }
+
+        class DbAccessGrowJPA {
+            -growJPARepo: GrowJPARepo
+            +DbAccessGrowJPA(growJPARepo: GrowJPARepo)
+            +saveGrow(grow: Grow): Grow
+            +allGrows(): List<Grow>
+            +allGrowsWithPlant(plant: Plant): List<Grow>
+            +growWithId(id: Long): Grow
+            +deleteGrowTypeWithId(id: Long): Grow
+        }
+    }
+    package com.growmanager.service {
+        interface GrowService {
+            +allGrows(): List<Grow>
+            +insertGrow(grow: Grow): Grow
+            +updateGrow(grow: Grow): Grow
+            +growWithId(id: Long): Grow
+            +allGrowsWithPlants(plant: Plant): List<Grow>
+            +deleteGrowWithId(id: Long): Grow
+        }
+
+        class GrowServiceImpl  {
+            -dbAccessGrow: DbAccessGrow
+            +GrowServiceImpl(dbAccessGrow: DbAccessGrow)
+            +allGrows(): List<Grow>
+            +insertGrow(grow: Grow): Grow
+            +updateGrow(grow: Grow): Grow
+            +growWithId(id: Long): Grow
+            +allGrowsWithPlants(plant: Plant): List<Grow>
+            +deleteGrowWithId(id: Long): Grow
+        }
+    }
+
+    package com.growmanager.controller {
+        class GrowThymeleafController {
+            -growService: GrowService
+            -plantService: PlantService
+            +GrowThymeleafController(growService: GrowService, plantService: PlantService)
+            +getAllGrows(model: Model): String
+            +insertGrowForm(model: Model): String
+            +insertGrow(grow: Grow, bindingResult: BindingResult, model: Model): String
+            +updateGrowForm(id: Long, model: Model): String
+            +updateGrow(grow: Grow, bindingResult: BindingResult, model: Model): String
+            +deleteGrow(id: Long, model: Model): String
+        }
+    }
+
+    GrowThymeleafController -down-> GrowService : uses
+    GrowService -down-> DbAccessGrow : uses
+    DbAccessGrowJPA -up-> GrowJPARepo : uses
+    GrowThymeleafController -down-> PlantService : uses
+    Grow -up-> Plant : has
+    GrowServiceImpl -up-|> GrowService : implements
+    DbAccessGrowJPA -up-|> DbAccessGrow : implements
+
+}
+
+@enduml

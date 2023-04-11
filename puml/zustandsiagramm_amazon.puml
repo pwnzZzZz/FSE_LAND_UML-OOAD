@@ -1,0 +1,26 @@
+@startuml Zustandsdiagramm Amazon
+skinparam state {
+  StartColor Black
+  EndColor Black
+  BackgroundColor White
+  BorderColor Black
+}
+
+title Zustandsdiagramm Bestellung Amazon
+
+[*] --> Warenkorb: Artikel in Warenkorb legen
+Warenkorb --> BetragBezahlt: Betrag bezahlen
+BetragBezahlt --> VorbereitungBestellung: Bestellung vorbereiten
+VorbereitungBestellung --> BestellungVersendet: Bestellung aufgeben
+BestellungVersendet --> BestellungGeliefert: Bestellung liefern
+BestellungGeliefert --> [*]: Bestellung abschließen
+
+Warenkorb --> BestellungStorniert: Bestellung abbrechen
+VorbereitungBestellung --> BestellungStorniert: Bestellung stornieren
+BestellungStorniert --> [*]: Bestellung beenden
+BestellungGeliefert --> BestellungReturniert: Bestellung returnieren
+BestellungReturniert --> VorbereitungBestellung: Bestellung erneut liefern
+BetragReturniert --> [*]: Erstattung abschließen
+BestellungReturniert --> BetragReturniert: Zahlungsbetrag erstatten
+
+@enduml

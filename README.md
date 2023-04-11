@@ -731,6 +731,22 @@ Das Diagramm enthält auch Methoden für das Zeichnen von Spielobjekten und Lase
 Interpretieren Sie schriftlich das folgende Sequenzdiagramm:
 ![Sequenzdiagramm 1](images/sequenzdiagramm_1.png)
 
+Dieses Beispiel eines Sequenzdiagramm zeigt den Ablauf des Kommentare-Submit-Vorgangs in einer Webanwendung.
+
+Zunächst ruft der Benutzer die validate()-Funktion auf, um seine eingegebenen Kommentare zu validieren. Diese Funktion wird auf dem Client ausgeführt und aktiviert die Validierungsfunktion in der Kommentarklasse.
+
+Nachdem die Validierung abgeschlossen ist, wird ein Ajax-Request an den Server gesendet, um die Validierungsergebnisse abzurufen. Dieser Request wird von einem Proxy-Objekt gesendet, das vom Client erstellt wurde.
+
+Auf dem Server empfängt der DWRServlet den Ajax-Request und leitet ihn an den DWRService weiter. Der DWRService führt die Validierung durch und gibt die Ergebnisse an den DWRServlet zurück.
+
+Das DWRServlet sendet dann die Validierungsergebnisse an das Proxy-Objekt. Sobald das Proxy-Objekt die Ergebnisse empfangen hat, ruft es die Callback-Funktion auf, die in diesem Fall die post_comments()-Funktion aufruft.
+
+In dieser Funktion wird ein weiterer Ajax-Request gesendet, um die Kommentare an den Server zu senden. Der Request wird von einem PluckRequestBatch-Objekt erstellt.
+
+Nachdem der Request gesendet wurde, ruft das PluckService-Objekt auf dem Server die postComments()-Funktion auf, um die Kommentare zu verarbeiten. Sobald die Verarbeitung abgeschlossen ist, gibt der PluckService die Ergebnisse als JSON an das Proxy-Objekt zurück.
+
+Das Proxy-Objekt ruft dann die Callback-Funktion auf, die in diesem Fall die Handle errors from Pluck()-Funktion aufruft, falls es Fehler gibt, oder die Request all comments()-Funktion aufruft, um alle Kommentare vom Server abzurufen, falls alles erfolgreich war.
+
 #
 #
 # SEQUENZDIAGRAMM 2
@@ -752,6 +768,21 @@ Gehen Sie davon aus, dass sich das Mitglied bereits auf der Seite des gewünscht
 Interpretieren Sie schriftlich das folgende Aktivitätsdiagramm:
 ![Aktivitätsdiagramm 1](images/aktivitaetsdiagramm_1.webp)
 
+Dieses Beispiel eines Aktivitätsdiagramms zeigt den Ablauf von einem Pendler, der einen Ticketautomaten benutzt.
+
+Es sind dabei 3 Akteure beteiligt:
+- Commuter
+- Ticket Vending Machine
+- Bank
+
+Wir starten beim Initalknoten und der Pendler beginnt mit "Start Session" und fordert beim Ticketautomaten "Request Trip Info" eine Reiseinfo an. Diese werdem dem Pendeler dann über "Provide Trip Info" angezeigt. Dieser wählt nun sein gewünschtes Reiseziel und der Ticketautomat verarbeitet diese Anfrage dann "Process Trip Info". Nach diesem Schritt, verlangt der Ticketautomat nach einer Zahlung "Request Payment". Der Pendler gibt seine Zahlungsdaten bekannt "Provide Payment Info" und diese Daten werden dann vom Automaten verarbeitet "Process Payment".
+
+Hier stoßen wir auf eine Verzweigung, wobei der Pendler sich zwischen Bar- und Kartenzahlung entscheiden muss. Bei der Barzahlung wird das Geld vom Automaten entgegengenommen, wohingegegen bei der Kartenzahlung noch autorisiert wird "Authorize Card Payment". Die Flusslinien laufen dann wieder zusammen und der Ticketautomat bereitet das Ticket vor und druckt dieses aus "Ticket".
+
+Der Pendler kann sich dann das Ticket aus dem Automaten nehmen "Get Ticket". Nun stoßen wir auf die nächste Verzweigung. Hat der Pendler zuvor passend bar oder mit Karte bezahlt hat, ist der Kauf abgeschlossen und es wird eine "Show Thank you" Mitteilung angezeigt.
+
+Falls er jedoch bar bezahlt hat und noch Wechselgeld zurückbekommt, wird dies über "Dispense Change" vom Automaten realisert. Der Automat gibt dann das fehlende Restgeld "Change" zurück. Der Pendler kann sich das Wechselgelnd nehmen "Get Change" und die Flusslinien laufen dann wieder zusammen und es wir die "Show Thank you" Mitteilung angezeigt.
+
 #
 #
 # AKITIVITÄTSDIAGRAMM 2
@@ -762,11 +793,24 @@ mit dem Ticket etwas nicht stimmt, muss der Fluggast den Kundendienst konsultier
 nichtmitfliegen. Das Gepäck wird zudem auf Übergewicht überprüft. Falls dem so ist, muss der Fluggast
 zusätzliche Kostenübernehmen. Falls aber das Gewicht in Ordnung ist, wird die Bordkarte ausgestellt.
 
+![Aktivitätsdiagramm Flughafen](out/aktivitaetsdiagramm_flughafen/Aktivit%C3%A4tsdiagramm%20Flughafen.png)
+
 #
 #
 # ZUSTANDSDIAGRAMM 1
 Interpretieren Sie schriftlich das folgende Zustandsdiagramm:
 ![Zustandsdiagramm 1](images/zustandsdiagramm_1.webp)
+
+Das folgende Beispiel ist ein UML-Zustandsdiagramm, das den Zustandsübergang eines Bankautomaten beschreibt. Das Diagramm zeigt die verschiedenen Zustände des Automaten sowie die Übergänge zwischen ihnen an.
+
+Das Diagramm beginnt mit dem Startzustand "Off". Wenn der Automat eingeschaltet wird, geht er in den Zustand "SelfTest" über, wo eine Selbstprüfung durchgeführt wird. Wenn die Selbstprüfung erfolgreich ist, geht der Automat in den Zustand "Idle" über, wo er darauf wartet, dass eine Karte eingeführt wird.
+
+Wenn eine Karte eingeführt wird, geht der Automat in den Zustand "ServiceCustomer" über, wo der Kunde authentifiziert wird. Wenn die Authentifizierung erfolgreich ist, geht der Automat in den Zustand "SelectingTransaction" über, wo der Kunde auswählen kann, welche Transaktion er durchführen möchte.
+
+Wenn der Kunde eine Transaktion auswählt, geht der Automat in den Zustand "Transaction" über und führt die ausgewählte Transaktion durch. Wenn die Transaktion abgeschlossen ist, geht der Automat wieder in den Zustand "Idle" zurück und wartet auf die nächste Karte.
+
+Wenn es zu einem Fehler kommt, geht der Automat in den Zustand "OutOfService" über, wo er nicht mehr verwendet werden kann, bis er repariert wurde. Der Automat kann auch in den Zustand "Maintenance" gehen, wo er gewartet oder repariert wird. Wenn die Wartung abgeschlossen ist, geht der Automat wieder in den Zustand "Idle" zurück. Wenn der Automat ausgeschaltet wird, geht er wieder in den Zustand "Off" zurück.
+
 
 #
 #
@@ -774,6 +818,8 @@ Interpretieren Sie schriftlich das folgende Zustandsdiagramm:
 Entwerfen Sie ein Zustandsdiagramm für eine Bestellung auf Amazon. Modellieren Sie dazu die Zustände und
 die Übergänge einer Bestellung vom Aufgeben der Bestellung bis hin zur Aushändigung des Paketes an den
 Kunden.
+
+![Zustandsdiagramm Amazon](out/zustandsiagramm_amazon/Zustandsdiagramm%20Amazon.png)
 
 #
 #
@@ -786,3 +832,298 @@ C4-Diagrammmodell:
 - Level 2: Container diagramm
 - Level 3: Component diagramm
 - Level 4: Klassendiagramm (Beispielhaft nur für ein paar Komponenten aus Level 3)
+
+## C4-Model
+Die folgenden C4-Diagramme beschreiben die verschiedenen Schichten des Systems
+’GrowManager’. Diese werden in den einzelnen Diagrammen genauer aufgezeigt. Bei
+diesem Model wird das System in Container und Komponenten aufgeteilt - jedes der
+Diagramme zeigt dabei eine andere Detailansicht. Ein C4-Modell wird in Context-
+, Container-, Component- und Code-Diagramm unterteilt. Dabei abstrahiert das
+nächstfolgende Diagramm jeweils einen Teil des vorhergegangenen Diagramms.
+
+### C4-Context Diagramm
+Zunnächst wird das C4-Context Diagramm beschrieben:
+![C4-Context Diagramm Growmanager](out/c4_context/GrowManager_C4Context.png)
+
+Im Diagramm gibt es drei Hauptelemente:
+- User (Angemeldeter Benutzer): Dies repräsentiert die Person, die das GrowManager-
+System verwendet. Die Rolle des Benutzers ist es, mit dem System zu interagieren
+und dessen Funktionen zu nutzen.
+- GrowManager (System): Dies ist das Hauptsystem, das im Diagramm dargestellt
+wird. Der GrowManager ist eine Plattform zur Verwaltung von Pflanzendaten,
+einschließlich Wachstums- und Blüte-Informationen. Das System ist
+dafür verantwortlich, Benutzern die Möglichkeit zu geben, auf diese Daten
+zuzugreifen und sie zu verwalten.
+- XAMPP (System-Ext): XAMPP ist ein externes System, das im Probebetrieb
+Serverressourcen und eine Datenbank für den GrowManager bereitstellt. Es
+dient als Hosting-Infrastruktur für das GrowManager-System.
+
+Die Beziehungen zwischen diesen Elementen sind wie folgt dargestellt:
+- Der Benutzer (User) ’verwendet’ das GrowManager-System, was bedeutet,
+dass der Benutzer auf das System zugreift und dessen Funktionen nutzt.
+- Das GrowManager-System ’wird gehosted von’ XAMPP, was darauf hinweist,
+dass XAMPP als Hosting-Plattform für das GrowManager-System dient.
+
+
+
+### C4-Container Diagramm
+Nun wird das C4-Container Diagramm dargestellt:
+![C4-Container Diagramm GrowManager](out/c4_container/GrowManager_C4Container.png)
+
+
+In der nächsten Abbildung sind fünf Hauptelemente innerhalb der Systemgrenze des GrowManagers zu sehen:
+- Backend: Dies ist eine Spring Boot-Anwendung, die für die Business-Logik,
+Datenbankverbindung, Web-Controller, Exceptions und Domain-Klassen verantwortlich
+ist.
+- Thymeleaf-Frontend: Dies ist eine Java-Template-Engine, die auf HTML-Code
+basiert und für die Erstellung des Frontends verantwortlich ist. Das Frontend
+kommuniziert mit dem Backend über Thymeleaf.
+- Apache Web Server: Dies ist ein HTTP-Server, der den GrowManager hostet.
+- Datenbank: Dies ist eine MySQL-Datenbank, die die Inhalte derWebsite sowie
+die Informationen der Benutzer speichert.
+- XAMPP: Dies ist ein externes System, das im Probebetrieb Serverressourcen
+und Datenbank bereitstellt.
+- Es gibt auch den angemeldeten Benutzer (User) im Diagramm, der das GrowManager-
+System verwendet.
+
+Die Beziehungen zwischen diesen Elementen sind wie folgt dargestellt:
+- Der Thymeleaf-Frontend-Container liefert Web-Seiten an den Benutzer über
+den Apache Web Server-Container mit HTTP.
+- Der Apache Web Server-Container verarbeitet Anfragen und antwortet mit
+Daten an das Backend über HTTP.
+- Das Backend kommuniziert mit der Datenbank über JPA, um Daten zu speichern
+und aus der Datenbank zu lesen.
+- Sowohl der Apache Web Server als auch die Datenbank werden von XAMPP
+gehostet.
+- Der Benutzer (User) verwendet das GrowManager-System über HTTP.
+
+
+
+### C4-Component Diagramm
+Das C4-Component Diagramm wird in zwei Diagramme aufgeteilt, da es einfacher
+ist, das Frontend und das Backend separat aufzuzeigen.
+
+Zunächst wird das Diagramm
+für das Backend beschrieben:
+![C4-Component Diagram GrowManager](out/c4_component_backend/GrowManager_C4ComponentBackend.png)
+
+Im Diagramm gibt es fünf Hauptkomponenten innerhalb der Containergrenze des
+GrowManager-Backends:
+- Controller: Eine Komponente, die das Spring Boot Web-Framework verwendet
+und Funktionen für die Kommunikation (Thymeleaf) zwischen Backend und
+Webserver bereitstellt.
+- Repository: Eine Komponente, die für die Kommunikation (JPA) zwischen
+Backend und Datenbank verantwortlich ist und entsprechende Funktionen bereitstellt.
+- Service: Eine Komponente, die für die Business-Logik des Systems verantwortlich
+ist.
+- Domain: Eine Komponente, die Entity-Klassen und deren Beziehungen untereinander
+definiert.
+- Exceptions: Eine Komponente, die spezifische Fehlermeldungen mithilfe von
+Exceptions ausgibt.
+
+Zusätzlich gibt es zwei weitere Container im Diagramm, die nicht innerhalb der
+GrowManager-Backend-Grenze liegen:
+- Apache Web Server: Ein HTTP-Server, der den GrowManager hostet.
+- Datenbank: Eine MySQL-Datenbank, die die Inhalte der Website sowie die
+Informationen der Benutzer speichert.
+
+Die Beziehungen zwischen den Komponenten und Containern sind wie folgt dargestellt:
+- Die Domain-Komponente stellt Funktionen für das Repository, den Service
+und den Controller bereit.
+- Die Exceptions-Komponente stellt Funktionen für das Repository, den Service
+und den Controller bereit.
+- Das Repository stellt Funktionen für den Service bereit.
+- Der Service stellt Funktionen für den Controller bereit.
+- Das Repository kommuniziert mit der Datenbank über JPA, um Daten zu
+speichern und aus der Datenbank zu lesen.
+- Der Controller verarbeitet Anfragen und antwortet mit Daten an den Apache
+Web Server über HTTP.
+
+Nun wird das C4-Component Diagramm für das Frontend aufgezeigt:
+![C4-Component Diagramm Frontend GrowManager](out/c4_component_frontend/GrowManager_C4ComponentFrontend.png)
+
+Es gibt zwei Hauptkomponenten innerhalb der Containergrenze des GrowManager-Thymeleaf-
+Frontends:
+- Templates: Eine Komponente, die HTML-Dateien enthält, welche den Aufbau
+der Website definieren. Thymeleaf-Komponenten in den Templates können auf
+das Backend zugreifen.
+- CSS - Bootstrap: Eine Komponente, die ein Frontend-CSS-Framework repräsentiert
+und für das Look-and-Feel der Anwendung sorgt.
+
+Wieder gibt es einen weiteren Container im Diagramm, der nicht innerhalb der
+GrowManager-Thymeleaf-Frontend-Grenze liegt:
+- Apache Web Server: Ein HTTP-Server, der den GrowManager hostet.
+
+Die Beziehungen zwischen den Komponenten und Containern sind wie folgt dargestellt:
+- Die Templates-Komponente verwendet die CSS-Bootstrap-Komponente, um
+das Aussehen der Website zu gestalten.
+- Der Apache Web Server hostet das GrowManager-Thymeleaf-Frontend.
+
+
+### C4-Code Diagramm
+Da es im System sehr viele relevante Codeausschnitte gibt, wird zunächst ein Teil
+des Backends näher beschrieben. Dazu wurde ein Klassendiagramm aller relevanten
+Klassen für die Tabelle ’Grow’ erstellt:
+
+Das nachfolgende Diagramm zeigt einen Teil der Architektur und Klassenstruktur
+des GrowManager-Projekts.
+![C4-Code Diagramm GrowManager](out/c4_code_klassendiagrammGrow/GrowManager_C4-Code%C3%9Cbersicht.png)
+
+
+
+Die Hauptkomponenten des Projekts sind in
+vier Paketen organisiert: domain, repository, service und controller.
+- com.growmanager.domain:
+  - Plant: Eine Klasse, die eine Pflanze mit Attributen wie id, name, variety,
+growthPeriod, createdAt und updatedAt repräsentiert.
+  - Grow: Eine Klasse, die ein Wachstumsevent mit Attributen wie id, plant
+(eine Instanz der Plant-Klasse), startDate, estimatedEndDate, potSize,
+harvested und actualEndDate repräsentiert. Es enthält auch eine Methode
+setStartDate, um das Startdatum festzulegen.
+- com.growmanager.repository:
+  - DbAccessGrow: Ein Interface, das die Schnittstelle für den Zugriff auf
+Grow-Objekte in der Datenbank definiert.
+  - DbAccessGrowJPA: Eine Klasse, die das DbAccessGrow-Interface implementiert
+und die tatsächliche Kommunikation mit der Datenbank über
+ein GrowJPARepo-Objekt verwaltet.
+- com.growmanager.service:
+  - GrowService: Ein Interface, das die Schnittstelle für die GrowService-
+Logik definiert.
+  - GrowServiceImpl: Eine Klasse, die das GrowService-Interface implementiert
+und die GrowService-Logik mithilfe eines DbAccessGrow-Objekts
+verwaltet.
+- com.growmanager.controller:
+  - GrowThymeleafController: Eine Klasse, die für die Verarbeitung von HTTPAnfragen
+und die Kommunikation zwischen dem Frontend und der Backend-
+Logik zuständig ist. Es verwendet GrowService und PlantService, um die
+notwendigen Daten und Aktionen zu verwalten.
+
+Die Beziehungen zwischen den Klassen sind wie folgt dargestellt:
+- GrowThymeleafController verwendet GrowService und PlantService.
+- GrowService verwendet DbAccessGrow.
+- DbAccessGrowJPA verwendet GrowJPARepo.
+- GrowServiceImpl implementiert das GrowService-Interface.
+- DbAccessGrowJPA implementiert das DbAccessGrow-Interface.
+- Die Grow-Klasse hat eine Beziehung zur Plant-Klasse.
+
+Die Klasse ’GrowServiceImpl’ wird nun aufgelistet:
+
+```java
+@Service
+public class GrowServiceImpl implements GrowService {
+
+    private DbAccessGrow dbAccessGrow;
+
+    public GrowServiceImpl(DbAccessGrow dbAccessGrow) {
+        this.dbAccessGrow = dbAccessGrow;
+    }
+
+    @Override
+    public List<Grow> allGrows() {
+        return this.dbAccessGrow.allGrows();
+    }
+
+    @Override
+    public Grow insertGrow(Grow grow) throws DuplicatedGrowException {
+        return this.dbAccessGrow.saveGrow(grow);
+    }
+
+    @Override
+    public Grow updateGrow(Grow grow) throws GrowNotFound, DuplicatedGrowException {
+        Grow growFromDb = this.dbAccessGrow.growWithId(grow.getId());
+        growFromDb.setStartDate(grow.getStartDate());
+        growFromDb.setEstimatedEndDate(grow.getEstimatedEndDate());
+        growFromDb.setPotSize(grow.getPotSize());
+        growFromDb.setHarvested(grow.getHarvested());
+        growFromDb.setActualEndDate(grow.getActualEndDate());
+        return this.dbAccessGrow.saveGrow(growFromDb);
+    }
+
+    @Override
+    public Grow growWithId(Long id) throws GrowNotFound {
+        return this.dbAccessGrow.growWithId(id);
+    }
+
+    @Override
+    public List<Grow> allGrowsWithPlants(Plant plant) {
+        return this.dbAccessGrow.allGrowsWithPlant(plant);
+    }
+
+    @Override
+    public Grow deleteGrowWithId(Long id) throws GrowNotFound {
+        return this.dbAccessGrow.deleteGrowTypeWithId(id);
+    }
+}
+```
+
+Diese Klasse ist die GrowServiceImpl, die das GrowService Interface implementiert.
+Sie ist für die Geschäftslogik im Zusammenhang mit Grow-Objekten zuständig und
+verwendet ein DbAccessGrow-Objekt für den Zugriff auf die Datenbank.
+
+Die Klasse enthält die folgenden Methoden:
+- allGrows(): Gibt eine Liste aller Grow-Objekte zurück, indem sie die entsprechende
+Methode des DbAccessGrow-Objekts aufruft.
+- insertGrow(Grow grow): Fügt ein neues Grow-Objekt zur Datenbank hinzu
+und wirft eine DuplicatedGrowException, falls ein Duplikat gefunden wird.
+- updateGrow(Grow grow): Aktualisiert ein vorhandenes Grow-Objekt in der
+Datenbank und wirft GrowNotFound und DuplicatedGrowException bei entsprechenden
+Fehlern.
+- growWithId(Long id): Gibt ein Grow-Objekt anhand seiner ID zurück und
+wirft eine GrowNotFound-Exception, falls es nicht gefunden wird.
+- allGrowsWithPlants(Plant plant): Gibt eine Liste von Grow-Objekten zurück,
+die mit einer bestimmten Pflanze in Verbindung stehen.
+- deleteGrowWithId(Long id): Löscht ein Grow-Objekt anhand seiner ID und
+wirft eine GrowNotFound-Exception, falls es nicht gefunden wird.
+
+Der Konstruktor GrowServiceImpl(DbAccessGrow dbAccessGrow) nimmt ein DbAccessGrow-
+Objekt entgegen und weist es der Instanzvariablen dbAccessGrow zu. Diese Instanzvariable wird dann in den Methoden verwendet, um auf die entsprechenden Methoden
+des DbAccessGrow-Objekts zuzugreifen.
+
+Für das Frontend wird nun ein Teil des HTML-Files ’allGrows.html’ aufgelistet.
+Zwischen Zeile 16 und 20 dieses HTML-Codes ist zu erkennen, dass mithilfe von
+Thymeleaf auf alle Verfügbaren Grows in der Datenbank zugegriffen wird und diese
+mit einer ForEach-Schleife ausgegeben werden. Sprich, jeder Grow erhält eine eigene
+Zeile in der Ausgabe und wird separat ausgegeben.
+
+```html
+--Code ausgelassen--
+<table class="table table-striped table-hover">
+  <thead>
+          <tr>
+              <th style="width:10%">ID</th>
+              <th style="width:30%">Pflanzenname</th>
+              <th style="width:10%">Startdatum</th>
+              <th style="width:10%">Erwartetes Ende</th>
+              <th style="width:10%">Topfgröße (in l)</th>
+              <th style="width:10%">Tatsächliches Ende</th>
+              <th style="width:20%">Actions</th>
+          </tr>
+    </thead>
+    <tbody>
+          <tr th:each="grow: ${allGrows}">
+              <td style="width:10%" th:text="${grow.id}"></td>
+              <td style="width:30%" th:text="${grow.getPlant().getName()}"></td>
+              <td style="width:10%" th:text="${grow.startDate}"></td>
+              <td style="width:10%" th:text="${grow.estimatedEndDate}"></td>
+              <td style="width:10%" th:text="${grow.potSize}"></td>
+              <td style="width:10%" th:text="${grow.actualEndDate}"></td>
+              <td style="width:20%">
+                  <a th:href="@{/growmanager/v1/grows/update/{id}(id=${grow.id})}" class="edit"><i
+                                class="material-icons" data-toggle="tooltip" title="Edit">&#xE254;</i></a>
+                  <a th:href="@{/growmanager/v1/grows/delete/{id}(id=${grow.id})}" class="delete"><i
+                                class="material-icons" data-toggle="tooltip" title="Delete">&#xE872;</i></a>
+              </td>
+              <td style="width:20%">
+                  <a th:href="@{/growmanager/v1/repots/{id}(id=${grow.id})}" class="repot"><i
+                                class="material-icons repot" style="color: #0a8d0b" data-toggle="tooltip" title="Repot">&#xea35;</i></a>
+                  <a th:href="@{/growmanager/v1/waters/{id}(id=${grow.id})}" class="water"><i
+                                class="material-icons water" style="color: #1031d3" data-toggle="tooltip" title="Water">&#xe810;</i></a>
+              </td>
+          </tr>
+    </tbody>
+</table>
+--Code ausgelassen--          
+```
+
+Diese Codebeispiele sind nur ein kleiner Teil des Systems ’GrowManager’, sollten
+aber dennoch dabei helfen, den Aufbau besser verstehen zu können.

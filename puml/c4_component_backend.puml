@@ -1,0 +1,41 @@
+@startuml GrowManager_C4ComponentBackend
+!include https://raw.githubusercontent.com/plantuml-stdlib/C4-PlantUML/master/C4_Component.puml
+!define DEVICONS https://raw.githubusercontent.com/tupadr3/plantuml-icon-font-sprites/master/devicons
+!define FONTAWESOME https://raw.githubusercontent.com/tupadr3/plantuml-icon-font-sprites/master/font-awesome-5
+' uncomment the following line and comment the first to use locally
+' !include C4_Container.puml
+!include FONTAWESOME/server.puml
+!include DEVICONS/database.puml
+!include FONTAWESOME/server.puml
+!include DEVICONS/bootstrap.puml
+!include DEVICONS/wordpress.puml
+
+title GrowManager C4Component-Diagram
+
+Container(webserver, "Apache Web Server", "HTTP Server", "Hostet den GrowManager", "server")
+ContainerDb(database, "Datenbank", "MySQL", "Speichert die Inhalte der Website sowie die Informationen der User", "database")
+
+Container_Boundary(growmanager, "GrowManager Backend") {
+    
+    Component(controller, "Controller", "SpringBoot Web-Framework", "Stellt Funktionen für Kommunikation (Thymeleaf) zwischen Backend und Webserver bereit")
+    Component(repository, "Repository", "Kommunikation", "Stellt Funktionen für Kommunikation (JPA) zwischen Backend und Datenbank bereit")
+    Component(service, "Service", "Business-Logik", "Ist für die Business-Logik des Systems veratwortlich")
+    Component(domain, "Domain", "Entity-Klassen", "Entitys und deren Beziehungen untereinander werden darin definiert")
+    Component(exceptions, "Exceptions", "Exceptions", "Spezifische Fehlermeldungen können mithilfe der Exceptions ausgegeben werden")
+
+    Rel(domain, repository, "provides functions")
+    Rel(domain, service, "provides functions")
+    Rel(domain, controller, "provides functions")
+    Rel(exceptions, repository, "provides functions")
+    Rel(exceptions, service, "provides functions")
+    Rel(exceptions, controller, "provides functions")
+
+    Rel(repository, service, "provides functions")
+    Rel(service, controller, "provides functions")
+    
+    Rel(repository, database, "JPA", "Speichert und liest Daten aus/auf Datenbank")
+    Rel(webserver, controller, "HTTP", "Verarbeitet Anfragen und antwortet mit Daten")
+
+}
+
+@enduml

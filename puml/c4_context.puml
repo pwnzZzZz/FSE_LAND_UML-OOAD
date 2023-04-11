@@ -1,0 +1,18 @@
+@startuml GrowManager_C4Context
+!include https://raw.githubusercontent.com/plantuml-stdlib/C4-PlantUML/master/C4_Context.puml
+
+title GrowManager C4Context-Diagramm
+
+SHOW_PERSON_OUTLINE()
+Person(user, User, "Angemeldeter Benutzer")
+
+System(system, "GrowManager", "Plattform zur Verwaltung von Pflanzendaten inkl. Wachstums- und Blüteinformationen")
+
+System_Ext(host, "XAMPP", "Stellt im Probebetrieb Serverressourcen und Datenbank bereit")
+
+
+' if sprite starts with &, sprite defines a OpenIconic, details see https://useiconic.com/open/
+Rel_D(user, system, "verwendet")
+Rel_D(system, host, "wird gehosted von")
+LAYOUT_WITH_LEGEND()
+@enduml
